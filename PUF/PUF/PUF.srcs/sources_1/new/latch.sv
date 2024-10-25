@@ -2,10 +2,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
-// 
-// Create Date: 10/15/2024 05:05:06 PM
+//
+// Create Date: 10/22/2024 04:19:18 PM
 // Design Name: 
-// Module Name: 2inmux
+// Module Name: slice-x0-y0
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,19 +19,21 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+module latch (
+    // Inputs
+    input logic dataIn,
+    input logic enable,
+    input logic clk,
 
-module twoInMux(
-        input SEL,
-        input A,
-        input B,
-        output logic OUT
-    );
+    // Outputs
+    output logic dataOut
+);
 
-    always_comb begin
-        case(SEL)
-        1'b0 : OUT = A;
-        1'b1 : OUT = B;
-        default : OUT = OUT;
-        endcase
-     end
+  always_latch @(posedge clk) begin
+    if (enable) begin
+      dataOut <= dataIn;
+    end
+  end
+
 endmodule
+
