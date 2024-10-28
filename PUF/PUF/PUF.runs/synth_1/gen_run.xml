@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1729814217" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/sha128_simple.dcp">
-  <File Type="PA-TCL" Name="ringOscillator.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="ringOscillator_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="ringOscillator_reports.tcl"/>
-  <File Type="RDS-RDS" Name="ringOscillator.vds"/>
-  <File Type="RDS-UTIL" Name="ringOscillator_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="ringOscillator_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="ringOscillator.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="ringOscillator_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="ringOscillator_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1730157319" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/sha128_simple.dcp">
+  <File Type="PA-TCL" Name="ringOscillatorWithLED.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="ringOscillatorWithLED_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="ringOscillatorWithLED_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ringOscillatorWithLED.vds"/>
+  <File Type="RDS-UTIL" Name="ringOscillatorWithLED_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="ringOscillatorWithLED_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="ringOscillatorWithLED.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ringOscillatorWithLED_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="ringOscillatorWithLED_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/frequencyDivider.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/latch.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ringOscillator.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -39,7 +53,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ringOscillator.sv">
+    <File Path="$PSRCDIR/sources_1/new/ringOscillatorWithLED.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -69,32 +83,48 @@
     </File>
     <File Path="$PPRDIR/../sha256.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../sha128_simple.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../sseg_des.vhd">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+      <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="ringOscillator"/>
+      <Option Name="TopModule" Val="ringOscillatorWithLED"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/verilog/Basys3_constraints.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../OneDrive - Cal Poly/School/Fall 2022-Miles-G14/CPE133/Homework 1/Homework 1.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc"/>
+        <Attr Name="ImportTime" Val="1666940992"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>

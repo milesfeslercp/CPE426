@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../sha256_types.vhd" \
+"../../../../../sha256_constants.vhd" \
+"../../../../../sha256_functions.vhd" \
+"../../../../../sha256.vhd" \
+"../../../../../sha128_simple.vhd" \
+
+# Do not sort compile order
+nosort

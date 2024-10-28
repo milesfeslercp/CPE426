@@ -26,7 +26,6 @@ module slicex0y1 (
     input  SEL0,
     input  EN,
     input  bx0,
-    input  clk,
     output out,
     output latch
 );
@@ -70,7 +69,6 @@ module slicex0y1 (
 
   latch latch0 (
       .dataIn(sliceOUT),
-      .clk(clk),
       .enable(1'b1),
       .dataOut(latch)
   );

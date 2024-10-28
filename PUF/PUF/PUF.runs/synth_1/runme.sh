@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='Z:/Documents/git/CPE426/PUF/PUF/PUF.runs/synth_1'
+HD_PWD='C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log ringOscillator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ringOscillator.tcl
+EAStep vivado -log ringOscillatorWithLED.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ringOscillatorWithLED.tcl

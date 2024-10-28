@@ -20,20 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module latch (
-    // Inputs
     input logic dataIn,
     input logic enable,
-    input logic clk,
-
-    // Outputs
     output logic dataOut
 );
 
-  always_latch @(posedge clk) begin
+  always @* begin
     if (enable) begin
-      dataOut <= dataIn;
+      dataOut = dataIn;  // Passes dataIn to dataOut immediately when enabled
     end
   end
 
 endmodule
-
