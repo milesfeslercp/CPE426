@@ -25,7 +25,7 @@ module ringOscillatorWithLED (
 );
 (* DONT_TOUCH = "true" *)
     // Signal from the ring oscillator to the divider
-(* KEEP = "true" *) logic outl;
+(* KEEP = "true" *) logic outl, out2;
 (* DONT_TOUCH = "true" *)
     // Instantiate Ring Oscillator
     ringOscillator ro_inst (
@@ -33,7 +33,7 @@ module ringOscillatorWithLED (
     );
 (* DONT_TOUCH = "true" *)
     // Frequency Divider to produce a 1 Hz signal
-    frequencyDivider #(.DIVIDE_BY(50000000)) divider (
+    frequencyDivider #(.DIVIDE_BY(125000000)) divider (
         .clk_in(outl),
         .clk_out(led_out)
     );
