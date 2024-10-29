@@ -20,7 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module ringOscillator (
-    output logic outl  // Outputs to the frequency divider or LED
+    input logic SEL0,
+    input logic SEL1,
+    input logic SEL2,
+    input logic bx0,
+    input logic bx1,
+    input logic bx2,
+    input logic enable,
+    output logic outl  
 );
 (* DONT_TOUCH = "true" *)
   // Internal Signals
@@ -35,9 +42,9 @@ module ringOscillator (
   (* DONT_TOUCH = "true" *)slicex0y1 slice0 (
       .A(slice2o),
       .B(slice2lo),
-      .SEL0(1'b0),       // Fixed value for SEL0
-      .EN(1'b1),         // Enable always on
-      .bx0(1'b1),        // Fixed value for bx0
+      .SEL0(SEL0),       // Fixed value for SEL0
+      .EN(enable),         // Enable always on
+      .bx0(bx0),        // Fixed value for bx0
       .out(slice0o),
       .latch(slice0lo)
   );
@@ -45,9 +52,8 @@ module ringOscillator (
   (* DONT_TOUCH = "true" *)slicex0y0 slice1 (
       .A(slice0o),
       .B(slice0lo),
-      .SEL1(1'b0),       // Fixed value for SEL1
-      //.EN(1'b1),         // Enable always on
-      .bx1(1'b1),        // Fixed value for bx1
+      .SEL1(SEL1),       // Fixed value for SEL1
+      .bx1(bx1),        // Fixed value for bx1
       .out(slice1o),
       .latch(slice1lo)
   );
@@ -55,9 +61,8 @@ module ringOscillator (
   (* DONT_TOUCH = "true" *)slicex0y0 slice2 (
       .A(slice1o),
       .B(slice1lo),
-      .SEL1(1'b0),       // Fixed value for SEL1
-      //.EN(1'b1),         // Enable always on
-      .bx1(1'b1),        // Fixed value for bx2
+      .SEL1(SEL2),       // Fixed value for SEL1
+      .bx1(bx2),        // Fixed value for bx2
       .out(slice2o),
       .latch(slice2lo)
   );
