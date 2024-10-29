@@ -29,6 +29,13 @@ module ringOscillatorWithLED (
 (* DONT_TOUCH = "true" *)
     // Instantiate Ring Oscillator
     ringOscillator ro_inst (
+        .SEL0(1'b1),
+        .SEL1(1'b0),
+        .SEL2(1'b1),
+        .bx0(1'b0),
+        .bx1(1'b0),
+        .bx2(1'b1),
+        .enable(1'b1),
         .outl(outl)
     );
 (* DONT_TOUCH = "true" *)

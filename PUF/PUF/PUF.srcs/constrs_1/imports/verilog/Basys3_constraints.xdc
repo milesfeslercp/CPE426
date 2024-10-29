@@ -17,6 +17,9 @@ set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro6/slice0/out]
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro7/slice0/out]
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro8/slice0/out]
 
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro_inst/slice0/out] 
+#for testing blinking RO
+
 # set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro_gen[0].ro_inst/slice0/out]
 # set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro_gen[1].ro_inst/slice0/out]
 # set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro_gen[2].ro_inst/slice0/out]
@@ -88,8 +91,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {LED[6]}]
 set_property PACKAGE_PIN V14 [get_ports {LED[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {LED[7]}]
 
-#set_property PACKAGE_PIN V13 [get_ports {led[8]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {led[8]}]
+set_property PACKAGE_PIN V13 [get_ports led_out]					
+	set_property IOSTANDARD LVCMOS33 [get_ports led_out]
 #set_property PACKAGE_PIN V3 [get_ports {led[9]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {led[9]}]
 #set_property PACKAGE_PIN W3 [get_ports {led[10]}]					

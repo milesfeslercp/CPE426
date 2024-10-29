@@ -24,9 +24,9 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "write_bitstream", "begin" );
+ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log RO_PUF.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source RO_PUF.tcl -notrace" );
+         "-log ringOscillatorWithLED.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ringOscillatorWithLED.tcl -notrace" );
 
 
 

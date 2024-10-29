@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="4,365.500 ns"></ZoomStartTime>
-      <ZoomEndTime time="4,450.001 ns"></ZoomEndTime>
+      <ZoomStartTime time="4,320.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="4,650.001 ns"></ZoomEndTime>
       <Cursor1Time time="4,595.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="265"></NameColumnWidth>
-      <ValueColumnWidth column_width="142"></ValueColumnWidth>
+      <ValueColumnWidth column_width="135"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="13" />
    <wvobject fp_name="/RO_PUF_tb/challenge" type="array">
@@ -39,6 +39,7 @@
    <wvobject fp_name="/RO_PUF_tb/LED" type="array">
       <obj_property name="ElementShortName">LED[7:0]</obj_property>
       <obj_property name="ObjectShortName">LED[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/RO_PUF_tb/challenge" type="array">
       <obj_property name="ElementShortName">challenge[5:0]</obj_property>

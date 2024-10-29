@@ -28,7 +28,7 @@ module RO_PUF (
     output [6:0] SEGMENTS,      // 7-segment display segments (active low)
     output [7:0] LED           // 8-bit LED output for testing
 );
-    (* KEEP = "true" *)parameter MAX_STD_COUNT = 50;  // Example max count for std_counter
+    (* KEEP = "true" *)parameter MAX_STD_COUNT = 50000;  // Example max count for std_counter
    (* KEEP = "true" *) parameter NUM_ROS = 9;              // Number of ROs
    (* KEEP = "true" *) wire valid = 1'b1;                  // Set display as valid
     (* KEEP = "true" *) reg [15:0] display_count;           // Expanded response to fit display COUNT input
@@ -47,7 +47,7 @@ module RO_PUF (
 
     // Most significant bits of the challenge for RO selection
     (* KEEP = "true" *)wire [2:0] select = challenge[5:3];
-    (* KEEP = "true" *)assign LED = response;
+    (* KEEP = "true" *)assign LED = response_reg;
     (* DONT_TOUCH = "true" *)sseg_des display_driver (
         .COUNT(display_count),
         .CLK(clk_50MHz),
@@ -62,15 +62,15 @@ module RO_PUF (
             (* KEEP = "true" *)display_count[15:8] = 8'b00000000; // Pad upper bits with zeros
         end
     // Instantiate the 9 Ring Oscillators with enable control
-    (* DONT_TOUCH = "true" *)RO_Sim ro0 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[0]), .outl(ro_out[0]));
-    (* DONT_TOUCH = "true" *)RO_Sim ro1 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[1]), .outl(ro_out[1]));
-    (* DONT_TOUCH = "true" *)RO_Sim ro2 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[2]), .outl(ro_out[2]));
-    (* DONT_TOUCH = "true" *)RO_Sim ro3 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[3]), .outl(ro_out[3]));
-    (* DONT_TOUCH = "true" *)RO_Sim ro4 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[4]), .outl(ro_out[4]));
-    (* DONT_TOUCH = "true" *)RO_Sim ro5 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[5]), .outl(ro_out[5]));
-    (* DONT_TOUCH = "true" *)RO_Sim ro6 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[6]), .outl(ro_out[6]));
-    (* DONT_TOUCH = "true" *)RO_Sim ro7 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[7]), .outl(ro_out[7]));
-    (* DONT_TOUCH = "true" *)RO_Sim ro8 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[8]), .outl(ro_out[8]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro0 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[0]), .outl(ro_out[0]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro1 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[1]), .outl(ro_out[1]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro2 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[2]), .outl(ro_out[2]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro3 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[3]), .outl(ro_out[3]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro4 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[4]), .outl(ro_out[4]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro5 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[5]), .outl(ro_out[5]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro6 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[6]), .outl(ro_out[6]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro7 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[7]), .outl(ro_out[7]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro8 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[8]), .outl(ro_out[8]));
 
     // Multiplexer to select the RO output based on `ro_index`
     (* KEEP = "true" *)assign selected_ro_out = ro_out[ro_index];
@@ -102,7 +102,7 @@ module RO_PUF (
                     (* KEEP = "true" *)ro_index <= 0;
                     for (integer i = 0; i < NUM_ROS - 1; i = i + 1) begin
                         (* KEEP = "true" *)
-                        if (ro_counts[i] >= ro_counts[i + 1]) begin
+                        if (ro_counts[i] > ro_counts[i + 1]) begin
                             response_reg[i] <= 1;
                         end else begin
                             response_reg[i] <= 0;
