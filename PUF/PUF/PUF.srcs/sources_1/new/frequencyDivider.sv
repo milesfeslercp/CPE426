@@ -26,7 +26,7 @@ module frequencyDivider (
 );
 
     // Parameter to divide down to approximately 1 Hz
-    parameter integer DIVIDE_BY = 50000000;  // Adjust this value based on RO frequency
+    parameter integer DIVIDE_BY = 125000000;  // Adjust this value based on RO frequency
 
     // Counter register
     logic [$clog2(DIVIDE_BY)-1:0] count;

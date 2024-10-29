@@ -17,7 +17,7 @@ set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro6/slice0/out]
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro7/slice0/out]
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro8/slice0/out]
 
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro_inst/slice0/out] 
+# set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro_inst/slice0/out] 
 #for testing blinking RO
 
 # set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets ro_gen[0].ro_inst/slice0/out]
@@ -91,8 +91,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {LED[6]}]
 set_property PACKAGE_PIN V14 [get_ports {LED[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {LED[7]}]
 
-set_property PACKAGE_PIN V13 [get_ports led_out]					
-	set_property IOSTANDARD LVCMOS33 [get_ports led_out]
+# set_property PACKAGE_PIN V13 [get_ports led_out]					
+# 	set_property IOSTANDARD LVCMOS33 [get_ports led_out]
 #set_property PACKAGE_PIN V3 [get_ports {led[9]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {led[9]}]
 #set_property PACKAGE_PIN W3 [get_ports {led[10]}]					
@@ -110,26 +110,26 @@ set_property PACKAGE_PIN V13 [get_ports led_out]
 	
 	
 ## 7-segment display segment connections
-set_property PACKAGE_PIN W7 [get_ports {SEGMENTS[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[0]}]
+set_property PACKAGE_PIN W7 [get_ports {SEGMENTS[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[6]}]
 
-set_property PACKAGE_PIN W6 [get_ports {SEGMENTS[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[1]}]
+set_property PACKAGE_PIN W6 [get_ports {SEGMENTS[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[5]}]
 
-set_property PACKAGE_PIN U8 [get_ports {SEGMENTS[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[2]}]
+set_property PACKAGE_PIN U8 [get_ports {SEGMENTS[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[4]}]
 
 set_property PACKAGE_PIN V8 [get_ports {SEGMENTS[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[3]}]
 
-set_property PACKAGE_PIN U5 [get_ports {SEGMENTS[4]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[4]}]
+set_property PACKAGE_PIN U5 [get_ports {SEGMENTS[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[2]}]
 
-set_property PACKAGE_PIN V5 [get_ports {SEGMENTS[5]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[5]}]
+set_property PACKAGE_PIN V5 [get_ports {SEGMENTS[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[1]}]
 
-set_property PACKAGE_PIN U7 [get_ports {SEGMENTS[6]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[6]}]
+set_property PACKAGE_PIN U7 [get_ports {SEGMENTS[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {SEGMENTS[0]}]
 
 
 #set_property PACKAGE_PIN V7 [get_ports dp]							
