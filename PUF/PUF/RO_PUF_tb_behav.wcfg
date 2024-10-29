@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="4,320.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="4,650.001 ns"></ZoomEndTime>
-      <Cursor1Time time="4,595.000 ns"></Cursor1Time>
+      <ZoomStartTime time="5.870378 us"></ZoomStartTime>
+      <ZoomEndTime time="10.225925 us"></ZoomEndTime>
+      <Cursor1Time time="7.295000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="265"></NameColumnWidth>
-      <ValueColumnWidth column_width="135"></ValueColumnWidth>
+      <ValueColumnWidth column_width="107"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/RO_PUF_tb/challenge" type="array">
       <obj_property name="ElementShortName">challenge[5:0]</obj_property>
       <obj_property name="ObjectShortName">challenge[5:0]</obj_property>
@@ -56,6 +56,7 @@
    <wvobject fp_name="/RO_PUF_tb/uut/ro_enable" type="array">
       <obj_property name="ElementShortName">ro_enable[8:0]</obj_property>
       <obj_property name="ObjectShortName">ro_enable[8:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/RO_PUF_tb/uut/ro_counter" type="array">
       <obj_property name="ElementShortName">ro_counter[15:0]</obj_property>
@@ -72,5 +73,78 @@
    <wvobject fp_name="/RO_PUF_tb/uut/ro_counts" type="array">
       <obj_property name="ElementShortName">ro_counts[8:0][15:0]</obj_property>
       <obj_property name="ObjectShortName">ro_counts[8:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro0/outl" type="logic">
+      <obj_property name="ElementShortName">outl</obj_property>
+      <obj_property name="ObjectShortName">outl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro0/enable" type="logic">
+      <obj_property name="ElementShortName">enable</obj_property>
+      <obj_property name="ObjectShortName">enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro0/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/selected_ro_out" type="logic">
+      <obj_property name="ElementShortName">selected_ro_out</obj_property>
+      <obj_property name="ObjectShortName">selected_ro_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/selected_ro_out_prev" type="logic">
+      <obj_property name="ElementShortName">selected_ro_out_prev</obj_property>
+      <obj_property name="ObjectShortName">selected_ro_out_prev</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro1/outl" type="logic">
+      <obj_property name="ElementShortName">outl</obj_property>
+      <obj_property name="ObjectShortName">outl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro1/enable" type="logic">
+      <obj_property name="ElementShortName">enable</obj_property>
+      <obj_property name="ObjectShortName">enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro1/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro1/counter" type="array">
+      <obj_property name="ElementShortName">counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro_out" type="array">
+      <obj_property name="ElementShortName">ro_out[8:0]</obj_property>
+      <obj_property name="ObjectShortName">ro_out[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/display_driver/COUNT" type="array">
+      <obj_property name="ElementShortName">COUNT[15:0]</obj_property>
+      <obj_property name="ObjectShortName">COUNT[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/display_driver/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/display_driver/VALID" type="logic">
+      <obj_property name="ElementShortName">VALID</obj_property>
+      <obj_property name="ObjectShortName">VALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/display_driver/DISP_EN" type="array">
+      <obj_property name="ElementShortName">DISP_EN[3:0]</obj_property>
+      <obj_property name="ObjectShortName">DISP_EN[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/display_driver/SEGMENTS" type="array">
+      <obj_property name="ElementShortName">SEGMENTS[6:0]</obj_property>
+      <obj_property name="ObjectShortName">SEGMENTS[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/display_driver/cnt_dig" type="array">
+      <obj_property name="ElementShortName">cnt_dig[1:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_dig[1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/display_driver/digit" type="array">
+      <obj_property name="ElementShortName">digit[3:0]</obj_property>
+      <obj_property name="ObjectShortName">digit[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/display_driver/sclk" type="logic">
+      <obj_property name="ElementShortName">sclk</obj_property>
+      <obj_property name="ObjectShortName">sclk</obj_property>
    </wvobject>
 </wave_config>

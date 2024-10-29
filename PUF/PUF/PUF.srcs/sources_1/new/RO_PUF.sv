@@ -28,13 +28,13 @@ module RO_PUF (
     output [6:0] SEGMENTS,      // 7-segment display segments (active low)
     output [7:0] LED           // 8-bit LED output for testing
 );
-    (* KEEP = "true" *)parameter MAX_STD_COUNT = 50000;  // Example max count for std_counter
+    (* KEEP = "true" *)parameter MAX_STD_COUNT = 80;  // Example max count for std_counter
    (* KEEP = "true" *) parameter NUM_ROS = 9;              // Number of ROs
-   (* KEEP = "true" *) wire valid = 1'b1;                  // Set display as valid
+   (* KEEP = "true" *) reg valid = 1'b1;                  // Set display as valid
     (* KEEP = "true" *) reg [15:0] display_count;           // Expanded response to fit display COUNT input
     (* KEEP = "true" *)wire [8:0] ro_out;                  // Outputs from each RO instance (9 ROs)
-    (* KEEP = "true" *)wire selected_ro_out;               // Output from the selected RO
-    (* KEEP = "true" *)reg [8:0] ro_enable = 9'b000000001;
+    (* KEEP = "true" *)reg selected_ro_out, selected_ro_out_prev;               // Selected RO output based on `ro_index`
+    (* KEEP = "true" *)reg [8:0] ro_enable = 9'b000000000;
     (* KEEP = "true" *)reg [15:0] ro_counter = 0;              // Counter for RO oscillations
     (* KEEP = "true" *)reg [15:0] std_counter = 0;         // Standard counter for comparison
     (* KEEP = "true" *)reg [7:0] response_reg = 8'b00000000;  // Response register
@@ -62,15 +62,15 @@ module RO_PUF (
             (* KEEP = "true" *)display_count[15:8] = 8'b00000000; // Pad upper bits with zeros
         end
     // Instantiate the 9 Ring Oscillators with enable control
-    (* DONT_TOUCH = "true" *)ringOscillator ro0 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[0]), .outl(ro_out[0]));
-    (* DONT_TOUCH = "true" *)ringOscillator ro1 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[1]), .outl(ro_out[1]));
-    (* DONT_TOUCH = "true" *)ringOscillator ro2 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[2]), .outl(ro_out[2]));
-    (* DONT_TOUCH = "true" *)ringOscillator ro3 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[3]), .outl(ro_out[3]));
-    (* DONT_TOUCH = "true" *)ringOscillator ro4 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[4]), .outl(ro_out[4]));
-    (* DONT_TOUCH = "true" *)ringOscillator ro5 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[5]), .outl(ro_out[5]));
-    (* DONT_TOUCH = "true" *)ringOscillator ro6 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[6]), .outl(ro_out[6]));
-    (* DONT_TOUCH = "true" *)ringOscillator ro7 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[7]), .outl(ro_out[7]));
-    (* DONT_TOUCH = "true" *)ringOscillator ro8 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[8]), .outl(ro_out[8]));
+    (* DONT_TOUCH = "true" *)ringOscillator ro0 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[0]), .outl(ro_out[0]), .clk(clk_50MHz));
+    (* DONT_TOUCH = "true" *)ringOscillator ro1 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[1]), .outl(ro_out[1]), .clk(clk_50MHz));
+    (* DONT_TOUCH = "true" *)ringOscillator ro2 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[2]), .outl(ro_out[2]), .clk(clk_50MHz));
+    (* DONT_TOUCH = "true" *)ringOscillator ro3 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[3]), .outl(ro_out[3]), .clk(clk_50MHz));
+    (* DONT_TOUCH = "true" *)ringOscillator ro4 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[4]), .outl(ro_out[4]), .clk(clk_50MHz));
+    (* DONT_TOUCH = "true" *)ringOscillator ro5 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[5]), .outl(ro_out[5]), .clk(clk_50MHz));
+    (* DONT_TOUCH = "true" *)ringOscillator ro6 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[6]), .outl(ro_out[6]), .clk(clk_50MHz));
+    (* DONT_TOUCH = "true" *)ringOscillator ro7 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[7]), .outl(ro_out[7]), .clk(clk_50MHz));
+    (* DONT_TOUCH = "true" *)ringOscillator ro8 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[8]), .outl(ro_out[8]), .clk(clk_50MHz));
 
     // Multiplexer to select the RO output based on `ro_index`
     (* KEEP = "true" *)assign selected_ro_out = ro_out[ro_index];
@@ -78,9 +78,20 @@ module RO_PUF (
     // Main state machine for RO measurement and comparison
     always @(posedge clk_50MHz) begin
         if (counting_active) begin
+            if(valid == 0) begin
+                valid = 1;
+            end
             // Increment standard counter and RO counter
             (* KEEP = "true" *)std_counter <= std_counter + 1;
-            (* DONT_TOUCH = "true" *)ro_counter <= ro_counter + 1;
+
+            (* DONT_TOUCH = "true" *)
+            // Detect rising edge of selected_ro_out and increment ro_counter accordingly
+            if (ro_out[ro_index] + 1) begin
+                (* KEEP = "true" *)ro_counter <= ro_counter + 1;
+            end
+
+        // Update previous state of selected_ro_out for edge detection
+            // (* KEEP = "true" *)selected_ro_out_prev <= selected_ro_out;
 
             // Stop counters when std_counter hits MAX_STD_COUNT
             (* DONT_TOUCH = "true" *)if (std_counter >= MAX_STD_COUNT) begin
@@ -91,7 +102,7 @@ module RO_PUF (
                 (* KEEP = "true" *)std_counter <= 0;
                 (* KEEP = "true" *)ro_counter <= 0;
 (* DONT_TOUCH = "true" *)
-                (* KEEP = "true" *)ro_enable[ro_index] <= 1'b0;
+                (* KEEP = "true" *)ro_enable <= 9'b000000000;
                 // Move to the next RO
                 if (ro_index < NUM_ROS - 1) begin
                    (* KEEP = "true" *) ro_index <= ro_index + 1;
@@ -100,14 +111,16 @@ module RO_PUF (
                 end else begin(* DONT_TOUCH = "true" *)
                     // After all ROs are measured, proceed to comparisons
                     (* KEEP = "true" *)ro_index <= 0;
+                    valid = 0;
                     for (integer i = 0; i < NUM_ROS - 1; i = i + 1) begin
                         (* KEEP = "true" *)
-                        if (ro_counts[i] > ro_counts[i + 1]) begin
+                        if (ro_counts[i] > ro_counts[i + 1]) begin // Minus 1 for use in tb
                             response_reg[i] <= 1;
                         end else begin
                             response_reg[i] <= 0;
                         end
                     end
+                    // valid = 1;
                 end
             end
         end else begin
