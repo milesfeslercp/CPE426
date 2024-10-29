@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../PUF.srcs/sources_1/new/RO_PUF.sv" \
+"../../../../PUF.srcs/sim_1/new/RO_Sim.sv" \
+"../../../../PUF.srcs/sim_1/new/RO_PUF_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

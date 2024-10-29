@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Tue Oct 29 02:38:56 2024
+| Date         : Tue Oct 29 03:30:05 2024
 | Host         : Miles-G14 running 64-bit major release  (build 9200)
 | Command      : report_drc -file RO_PUF_drc_routed.rpt -pb RO_PUF_drc_routed.pb -rpx RO_PUF_drc_routed.rpx
 | Design       : RO_PUF
@@ -49,65 +49,47 @@ Related violations: <none>
 
 LUTLP-2#1 Warning
 Combinatorial Loop Allowed  
-3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro_gen[0].ro_inst/slice0/latch_INST_0,
-ro_gen[0].ro_inst/slice1/latch_INST_0
-ro_gen[0].ro_inst/slice2/latch_INST_0.
+3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro0/slice0/latch_INST_0, ro0/slice1/latch_INST_0, ro0/slice2/latch_INST_0.
 Related violations: <none>
 
 LUTLP-2#2 Warning
 Combinatorial Loop Allowed  
-3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro_gen[1].ro_inst/slice0/latch_INST_0,
-ro_gen[1].ro_inst/slice1/latch_INST_0
-ro_gen[1].ro_inst/slice2/latch_INST_0.
+3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro1/slice0/latch_INST_0, ro1/slice1/latch_INST_0, ro1/slice2/latch_INST_0.
 Related violations: <none>
 
 LUTLP-2#3 Warning
 Combinatorial Loop Allowed  
-3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro_gen[2].ro_inst/slice0/latch_INST_0,
-ro_gen[2].ro_inst/slice1/latch_INST_0
-ro_gen[2].ro_inst/slice2/latch_INST_0.
+3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro2/slice0/latch_INST_0, ro2/slice1/latch_INST_0, ro2/slice2/latch_INST_0.
 Related violations: <none>
 
 LUTLP-2#4 Warning
 Combinatorial Loop Allowed  
-3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro_gen[3].ro_inst/slice0/latch_INST_0,
-ro_gen[3].ro_inst/slice1/latch_INST_0
-ro_gen[3].ro_inst/slice2/latch_INST_0.
+3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro3/slice0/latch_INST_0, ro3/slice1/latch_INST_0, ro3/slice2/latch_INST_0.
 Related violations: <none>
 
 LUTLP-2#5 Warning
 Combinatorial Loop Allowed  
-3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro_gen[4].ro_inst/slice0/latch_INST_0,
-ro_gen[4].ro_inst/slice1/latch_INST_0
-ro_gen[4].ro_inst/slice2/latch_INST_0.
+3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro4/slice0/latch_INST_0, ro4/slice1/latch_INST_0, ro4/slice2/latch_INST_0.
 Related violations: <none>
 
 LUTLP-2#6 Warning
 Combinatorial Loop Allowed  
-3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro_gen[5].ro_inst/slice0/latch_INST_0,
-ro_gen[5].ro_inst/slice1/latch_INST_0
-ro_gen[5].ro_inst/slice2/latch_INST_0.
+3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro5/slice0/latch_INST_0, ro5/slice1/latch_INST_0, ro5/slice2/latch_INST_0.
 Related violations: <none>
 
 LUTLP-2#7 Warning
 Combinatorial Loop Allowed  
-3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro_gen[6].ro_inst/slice0/latch_INST_0,
-ro_gen[6].ro_inst/slice1/latch_INST_0
-ro_gen[6].ro_inst/slice2/latch_INST_0.
+3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro6/slice0/latch_INST_0, ro6/slice1/latch_INST_0, ro6/slice2/latch_INST_0.
 Related violations: <none>
 
 LUTLP-2#8 Warning
 Combinatorial Loop Allowed  
-3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro_gen[7].ro_inst/slice0/latch_INST_0,
-ro_gen[7].ro_inst/slice1/latch_INST_0
-ro_gen[7].ro_inst/slice2/latch_INST_0.
+3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro7/slice0/latch_INST_0, ro7/slice1/latch_INST_0, ro7/slice2/latch_INST_0.
 Related violations: <none>
 
 LUTLP-2#9 Warning
 Combinatorial Loop Allowed  
-3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro_gen[8].ro_inst/slice0/latch_INST_0,
-ro_gen[8].ro_inst/slice1/latch_INST_0
-ro_gen[8].ro_inst/slice2/latch_INST_0.
+3 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: ro8/slice0/latch_INST_0, ro8/slice1/latch_INST_0, ro8/slice2/latch_INST_0.
 Related violations: <none>
 
 

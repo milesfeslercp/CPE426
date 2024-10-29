@@ -1,7 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/miles/OneDrive/Documents/CPE426/PUF/sha256_types.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/miles/OneDrive/Documents/CPE426/PUF/sha256_constants.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/miles/OneDrive/Documents/CPE426/PUF/sha256_functions.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/miles/OneDrive/Documents/CPE426/PUF/sha256.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'sha256'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/miles/OneDrive/Documents/CPE426/PUF/sha128_simple.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'sha128_simple'

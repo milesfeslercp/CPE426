@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Tue Oct 29 02:38:22 2024
+| Date         : Tue Oct 29 03:29:43 2024
 | Host         : Miles-G14 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file RO_PUF_control_sets_placed.rpt
 | Design       : RO_PUF
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     3 |
-|    Minimum number of control sets                        |     3 |
+| Total control sets                                       |     4 |
+|    Minimum number of control sets                        |     4 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    13 |
+| Unused register locations in slices containing registers |    11 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,8 +39,8 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     3 |
-| >= 0 to < 4        |     1 |
+| Total control sets |     4 |
+| >= 0 to < 4        |     2 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     1 |
@@ -58,9 +58,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              11 |            4 |
+| No           | No                    | No                     |               5 |            3 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              32 |            9 |
+| No           | Yes                   | No                     |              40 |           14 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
@@ -74,7 +74,8 @@ Table of Contents
 |        Clock Signal        | Enable Signal |        Set/Reset Signal       | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------------------+---------------+-------------------------------+------------------+----------------+--------------+
 |  display_driver/my_clk/CLK |               |                               |                1 |              2 |         2.00 |
-|  clk_50MHz_IBUF_BUFG       |               |                               |                3 |              9 |         3.00 |
+|  clk_50MHz_IBUF_BUFG       |               |                               |                2 |              3 |         1.50 |
+|  clk_50MHz_IBUF_BUFG       |               | ro_index[3]_i_1_n_0           |                5 |              8 |         1.60 |
 |  clk_50MHz_IBUF_BUFG       |               | display_driver/my_clk/tmp_clk |                9 |             32 |         3.56 |
 +----------------------------+---------------+-------------------------------+------------------+----------------+--------------+
 
