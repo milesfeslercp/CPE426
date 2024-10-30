@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Tue Oct 29 14:44:15 2024
+| Date         : Tue Oct 29 16:53:48 2024
 | Host         : Miles-G14 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file RO_PUF_methodology_drc_routed.rpt -pb RO_PUF_methodology_drc_routed.pb -rpx RO_PUF_methodology_drc_routed.rpx
 | Design       : RO_PUF
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 32
+             Violations found: 33
 +-----------+------------------+-------------------------------+------------+
 | Rule      | Severity         | Description                   | Violations |
 +-----------+------------------+-------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell   | 2          |
-| TIMING-18 | Warning          | Missing input or output delay | 21         |
+| TIMING-18 | Warning          | Missing input or output delay | 22         |
 | TIMING-23 | Warning          | Combinational loop found      | 9          |
 +-----------+------------------+-------------------------------+------------+
 
@@ -147,6 +147,11 @@ Related violations: <none>
 TIMING-18#21 Warning
 Missing input or output delay  
 An output delay is missing on SEGMENTS[6] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An output delay is missing on done_LED relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-23#1 Warning

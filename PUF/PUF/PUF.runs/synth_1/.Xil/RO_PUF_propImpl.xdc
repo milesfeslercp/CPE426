@@ -29,6 +29,8 @@ set_property src_info {type:XDC file:1 line:88 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN U14 [get_ports {LED[6]}]
 set_property src_info {type:XDC file:1 line:91 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN V14 [get_ports {LED[7]}]
+set_property src_info {type:XDC file:1 line:108 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN L1 [get_ports done_LED]
 set_property src_info {type:XDC file:1 line:113 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W7 [get_ports {SEGMENTS[6]}]
 set_property src_info {type:XDC file:1 line:116 export:INPUT save:INPUT read:READ} [current_design]
