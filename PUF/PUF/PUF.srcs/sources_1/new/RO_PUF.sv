@@ -29,15 +29,15 @@ module RO_PUF (
     output [7:0] LED,           // 8-bit LED output for testing
     output done_LED
 );
-    (* KEEP = "true" *)parameter MAX_STD_COUNT = 5000;  // Example max count for std_counter
+    (* KEEP = "true" *)parameter MAX_STD_COUNT = 68435456;  // Example max count for std_counter
    (* KEEP = "true" *) parameter NUM_ROS = 9;              // Number of ROs
    (* KEEP = "true" *) reg valid = 1'b1;                  // Set display as valid
     (* KEEP = "true" *) reg [15:0] display_count;           // Expanded response to fit display COUNT input
     (* KEEP = "true" *)wire [8:0] ro_out;                  // Outputs from each RO instance (9 ROs)
     (* KEEP = "true" *)reg selected_ro_out, selected_ro_out_prev;               // Selected RO output based on `ro_index`
     (* KEEP = "true" *)reg [8:0] ro_enable = 9'b000000001;
-    (* KEEP = "true" *)reg [15:0] ro_counter = 0;              // Counter for RO oscillations
-    (* KEEP = "true" *)reg [15:0] std_counter = 0;         // Standard counter for comparison
+    (* KEEP = "true" *)reg [31:0] ro_counter = 0;              // Counter for RO oscillations
+    (* KEEP = "true" *)reg [31:0] std_counter = 0;         // Standard counter for comparison
     (* KEEP = "true" *)reg [7:0] response_reg = 8'b00000000;  // Response register
     (* KEEP = "true" *)reg [15:0] ro_counts [8:0];         // Temporary registers to store RO counts
     (* KEEP = "true" *)logic [7:0] response;
