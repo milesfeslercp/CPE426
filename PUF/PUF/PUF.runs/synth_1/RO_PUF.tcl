@@ -84,7 +84,14 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/twoInMux.sv
   C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/RO_PUF.sv
 }
-read_vhdl -library xil_defaultlib C:/Users/miles/Documents/CPE426/PUF/sseg_des.vhd
+read_vhdl -library xil_defaultlib {
+  C:/Users/miles/Documents/CPE426/PUF/sha128_simple.vhd
+  C:/Users/miles/Documents/CPE426/PUF/sha256_types.vhd
+  C:/Users/miles/Documents/CPE426/PUF/sha256_constants.vhd
+  C:/Users/miles/Documents/CPE426/PUF/sha256_functions.vhd
+  C:/Users/miles/Documents/CPE426/PUF/sha256.vhd
+  C:/Users/miles/Documents/CPE426/PUF/sseg_des.vhd
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

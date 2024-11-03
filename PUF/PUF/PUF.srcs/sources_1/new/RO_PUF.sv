@@ -24,11 +24,13 @@ module RO_PUF (
     input [5:0] challenge,     // 6-bit Challenge input to configure ROs
     input clk_50MHz,           // 50 MHz reference clock
     input btnC,                // Button C input for reset
+    input [3:0] SW,            // 4-bit SW input for display selection
     
     output [3:0] DISP_EN,      // Display enable control for each digit
     output [6:0] SEGMENTS,      // 7-segment display segments (active low)
     output [7:0] LED,           // 8-bit LED output for testing
-    output done_LED
+    output done_LED,
+    output sha_done_LED
 );
     (* KEEP = "true" *)parameter MAX_STD_COUNT = 10000000;  // Example max count for std_counter
    (* KEEP = "true" *) parameter NUM_ROS = 9;              // Number of ROs
@@ -57,12 +59,13 @@ module RO_PUF (
         .DISP_EN(DISP_EN),
         .SEGMENTS(SEGMENTS)
     );
+
+    reg [15:0] display_data;
+
     (* KEEP = "true" *)assign response = response_reg;
     (* DONT_TOUCH = "true" *)always @(*) begin
-            (* DONT_TOUCH = "true" *)
-            (* KEEP = "true" *)display_count[7:0] = response_reg;
-            (* KEEP = "true" *)display_count[15:8] = 8'b00000000; // Pad upper bits with zeros
-        end
+        display_count = display_data;
+    end
     // Instantiate the 9 Ring Oscillators with enable control
     // (* DONT_TOUCH = "true" *)RO_Sim ro0 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[0]), .outl(ro_out[0]), .clk(clk_50MHz));
     // (* DONT_TOUCH = "true" *)RO_Sim ro1 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[1]), .outl(ro_out[1]), .clk(clk_50MHz));
@@ -106,6 +109,32 @@ module RO_PUF (
     end
 
     (* KEEP = "true" *)assign ro_edge = selected_ro_out_sync2 && !selected_ro_out_prev_sync;
+
+(* DONT_TOUCH = "true" *)
+    // SHA-128 signals
+    (* KEEP = "true" *)wire ready;
+    (* KEEP = "true" *)wire [127:0] data_out;
+    (* KEEP = "true" *)reg start = 0;
+    (* KEEP = "true" *)reg reset = 0;
+    (* KEEP = "true" *)reg [5:0] prev_challenge;
+    (* KEEP = "true" *)reg [7:0] prev_response;
+    (* KEEP = "true" *)wire [15:0] data_in;
+
+    (* KEEP = "true" *)wire [3:0] sw_high_bits;
+    (* KEEP = "true" *)assign sw_high_bits = SW[3:0];
+
+    (* KEEP = "true" *)assign data_in = {2'b00, challenge, response_reg}; // 16 bits
+    // Instantiate the SHA-128 module
+        (* DONT_TOUCH = "true" *)
+    sha128_simple sha128_inst (
+        .CLK(clk_50MHz),
+        .DATA_IN(data_in),
+        .RESET(reset),
+        .START(start),
+        .READY(ready),
+        .DATA_OUT(data_out)
+    );
+    (* KEEP = "true" *)assign sha_done_LED = ready;
 
 (* DONT_TOUCH = "true" *)
     // Main state machine for RO measurement and comparison
@@ -192,8 +221,45 @@ module RO_PUF (
                 (* KEEP = "true" *)counting_active <= 0;
                 (* KEEP = "true" *)ro_enable <= 9'b000000000;
                 (* KEEP = "true" *)calculation_done <= 0;
-            end
+                // Start SHA-128 hashing
+                // start <= 1;
+                // reset <= 0;
+            end 
         end
         btnC_prev <= btnC;
     end  
+always @(*) begin
+        if (sw_high_bits == 4'b0000) begin
+            // Display challenge and response concatenated
+            display_data = {2'b00, challenge, response_reg}; 
+        end else if (sw_high_bits <= 4'd8) begin
+            case (sw_high_bits)
+                4'd1: display_data = data_out[119:104]; // Bytes 1 and 2
+                4'd2: display_data = data_out[103:88];  // Bytes 3 and 4
+                4'd3: display_data = data_out[87:72];   // Bytes 5 and 6
+                4'd4: display_data = data_out[71:56];   // Bytes 7 and 8
+                4'd5: display_data = data_out[55:40];   // Bytes 9 and 10
+                4'd6: display_data = data_out[39:24];   // Bytes 11 and 12
+                4'd7: display_data = data_out[23:8];    // Bytes 13 and 14
+                4'd8: display_data = data_out[7:0];     // Bytes 15 and 16
+                default: display_data = 16'h0000;
+            endcase
+        end else begin
+            // Switch value greater than 8, display zeros
+            display_data = 16'h0000;
+        end
+    end
+
+    // Generate start signal for SHA-128 when challenge or response changes
+    always @(posedge clk_50MHz) begin
+        if ((challenge != prev_challenge) || (response_reg != prev_response)) begin
+            start <= 1;
+            reset <= 0;
+            prev_challenge <= challenge;
+            prev_response <= response_reg;
+        end else begin
+            start <= 0;
+        end
+    end
+
 endmodule
