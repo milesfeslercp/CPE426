@@ -56,9 +56,9 @@ module RO_PUF_tb;
 
         // Apply different challenges to test RO_PUF functionality
         #100 challenge = 6'b000001;  // Test a specific challenge
-        #10000 challenge = 6'b000011;  // Change challenge to observe effects
-        #10000 challenge = 6'b001101;  // Another challenge example
-        #10000 challenge = 6'b111111;  // Full high challenge to test edge case
+        #100000 challenge = 6'b000011;  // Change challenge to observe effects
+        #100000 challenge = 6'b001101;  // Another challenge example
+        #100000 challenge = 6'b111111;  // Full high challenge to test edge case
 
         // Finish simulation
         #5000 $stop;

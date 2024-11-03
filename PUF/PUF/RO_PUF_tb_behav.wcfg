@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="5.870378 us"></ZoomStartTime>
-      <ZoomEndTime time="10.225925 us"></ZoomEndTime>
-      <Cursor1Time time="7.295000 us"></Cursor1Time>
+      <ZoomStartTime time="0.135000 us"></ZoomStartTime>
+      <ZoomEndTime time="333.635001 us"></ZoomEndTime>
+      <Cursor1Time time="100.135000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="265"></NameColumnWidth>
-      <ValueColumnWidth column_width="107"></ValueColumnWidth>
+      <NameColumnWidth column_width="284"></NameColumnWidth>
+      <ValueColumnWidth column_width="111"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="31" />
+   <WVObjectSize size="33" />
    <wvobject fp_name="/RO_PUF_tb/challenge" type="array">
       <obj_property name="ElementShortName">challenge[5:0]</obj_property>
       <obj_property name="ObjectShortName">challenge[5:0]</obj_property>
@@ -59,16 +59,17 @@
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/RO_PUF_tb/uut/ro_counter" type="array">
-      <obj_property name="ElementShortName">ro_counter[15:0]</obj_property>
-      <obj_property name="ObjectShortName">ro_counter[15:0]</obj_property>
+      <obj_property name="ElementShortName">ro_counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ro_counter[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/RO_PUF_tb/uut/std_counter" type="array">
-      <obj_property name="ElementShortName">std_counter[15:0]</obj_property>
-      <obj_property name="ObjectShortName">std_counter[15:0]</obj_property>
+      <obj_property name="ElementShortName">std_counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">std_counter[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/RO_PUF_tb/uut/response_reg" type="array">
       <obj_property name="ElementShortName">response_reg[7:0]</obj_property>
       <obj_property name="ObjectShortName">response_reg[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/RO_PUF_tb/uut/ro_counts" type="array">
       <obj_property name="ElementShortName">ro_counts[8:0][15:0]</obj_property>
@@ -85,6 +86,14 @@
    <wvobject fp_name="/RO_PUF_tb/uut/ro0/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro0/counter" type="array">
+      <obj_property name="ElementShortName">counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RO_PUF_tb/uut/ro0/toggle_threshold" type="array">
+      <obj_property name="ElementShortName">toggle_threshold[31:0]</obj_property>
+      <obj_property name="ObjectShortName">toggle_threshold[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/RO_PUF_tb/uut/selected_ro_out" type="logic">
       <obj_property name="ElementShortName">selected_ro_out</obj_property>
@@ -137,7 +146,6 @@
    <wvobject fp_name="/RO_PUF_tb/uut/display_driver/cnt_dig" type="array">
       <obj_property name="ElementShortName">cnt_dig[1:0]</obj_property>
       <obj_property name="ObjectShortName">cnt_dig[1:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/RO_PUF_tb/uut/display_driver/digit" type="array">
       <obj_property name="ElementShortName">digit[3:0]</obj_property>

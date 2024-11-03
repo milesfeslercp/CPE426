@@ -29,7 +29,7 @@ module RO_PUF (
     output [7:0] LED,           // 8-bit LED output for testing
     output done_LED
 );
-    (* KEEP = "true" *)parameter MAX_STD_COUNT = 68435456;  // Example max count for std_counter
+    (* KEEP = "true" *)parameter MAX_STD_COUNT = 1000000;  // Example max count for std_counter
    (* KEEP = "true" *) parameter NUM_ROS = 9;              // Number of ROs
    (* KEEP = "true" *) reg valid = 1'b1;                  // Set display as valid
     (* KEEP = "true" *) reg [15:0] display_count;           // Expanded response to fit display COUNT input
@@ -82,10 +82,11 @@ module RO_PUF (
     (* DONT_TOUCH = "true" *)ringOscillator ro6 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[6]), .outl(ro_out[6]));
     (* DONT_TOUCH = "true" *)ringOscillator ro7 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[7]), .outl(ro_out[7]));
     (* DONT_TOUCH = "true" *)ringOscillator ro8 (.SEL0(challenge[0]), .SEL1(challenge[1]), .SEL2(challenge[2]), .bx0(challenge[3]), .bx1(challenge[4]), .bx2(challenge[5]), .enable(ro_enable[8]), .outl(ro_out[8]));
-    reg calculation_done = 0;
-    assign done_LED = calculation_done;
+    (* KEEP = "true" *)reg calculation_done = 0;
+    (* KEEP = "true" *)assign done_LED = calculation_done;
 
-    reg [5:0] calculated_challenge;
+    (* KEEP = "true" *)reg [5:0] calculated_challenge;
+    (* KEEP = "true" *)reg [3:0] delay = 0;
     // Multiplexer to select the RO output based on `ro_index`
     (* KEEP = "true" *)assign selected_ro_out = ro_out[ro_index];
 (* DONT_TOUCH = "true" *)
@@ -98,8 +99,13 @@ module RO_PUF (
                     valid = 1;
                 end
                 // Increment standard counter and RO counter
-                (* KEEP = "true" *)std_counter <= std_counter + 1;
-
+                // if (delay == 6) begin
+                //     delay <= 0;  // Reset delay counter
+                //     (* KEEP = "true" *) std_counter <= std_counter + 1;
+                // end else begin
+                //     delay <= delay + 1;
+                // end
+                (* KEEP = "true" *) std_counter <= std_counter + 1;
                 (* DONT_TOUCH = "true" *)
                 // Detect rising edge of selected_ro_out and increment ro_counter accordingly
                 if (selected_ro_out && !selected_ro_out_prev) begin
@@ -131,7 +137,7 @@ module RO_PUF (
                         valid = 0;
                         for (integer i = 0; i < NUM_ROS - 1; i = i + 1) begin
                             (* KEEP = "true" *)
-                            if (ro_counts[i] > ro_counts[i + 1]) begin // Minus 1 for use in tb
+                            if (ro_counts[i] > ro_counts[i + 1]) begin 
                                 response_reg[i] <= 1;
                             end else begin
                                 response_reg[i] <= 0;

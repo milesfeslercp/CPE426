@@ -1,65 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="49404" HostCore="16" HostMemory="042123862016">
+    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="29584" HostCore="16" HostMemory="042123862016">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="5372" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="35056" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="39180" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="31020" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="32832" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="34736" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="3316" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="27884" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="43672" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="49460" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="19268" HostCore="16" HostMemory="042123862016">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="26308" HostCore="16" HostMemory="042123862016">
+    <Process Command="vivado.bat" Owner="miles" Host="MILES-G14" Pid="34372" HostCore="16" HostMemory="042123862016">
     </Process>
 </ProcessHandle>
