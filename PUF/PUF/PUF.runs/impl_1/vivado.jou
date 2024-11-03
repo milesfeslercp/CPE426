@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Nov  3 13:42:56 2024
-# Process ID: 13712
+# Start of session at: Sun Nov  3 14:33:07 2024
+# Process ID: 22096
 # Current directory: C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.runs/impl_1
 # Command line: vivado.exe -log RO_PUF.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source RO_PUF.tcl -notrace
 # Log file: C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.runs/impl_1/RO_PUF.vdi
@@ -19,6 +19,6 @@
 # Host memory       :42123 MB
 # Swap memory       :2684 MB
 # Total Virtual     :44808 MB
-# Available Virtual :25568 MB
+# Available Virtual :23791 MB
 #-----------------------------------------------------------
 source RO_PUF.tcl -notrace

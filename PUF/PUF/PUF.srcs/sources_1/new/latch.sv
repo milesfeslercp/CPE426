@@ -24,10 +24,10 @@ module latch (
     input logic enable,
     output logic dataOut
 );
-
+  (* DONT_TOUCH = "true" *)
   always @* begin
     if (enable) begin
-      dataOut = dataIn;  // Passes dataIn to dataOut immediately when enabled
+      (* KEEP = "true" *)dataOut = dataIn;  // Passes dataIn to dataOut immediately when enabled
     end
   end
 

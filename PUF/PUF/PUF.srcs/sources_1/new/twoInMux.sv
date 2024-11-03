@@ -26,8 +26,9 @@ module twoInMux(
         input B,
         output logic OUT
     );
-
+    (* DONT_TOUCH = "true" *)
     always_comb begin
+        (* DONT_TOUCH = "true" *)
         case(SEL)
         1'b0 : OUT = A;
         1'b1 : OUT = B;

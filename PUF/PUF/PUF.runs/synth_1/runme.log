@@ -8,12 +8,12 @@
   **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Sun Nov  3 13:39:01 2024
+  **** Start of session at: Sun Nov  3 14:32:20 2024
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source RO_PUF.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 511.754 ; gain = 201.281
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 513.066 ; gain = 201.633
 Command: read_checkpoint -auto_incremental -incremental C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/utils_1/imports/synth_1/sha128_simple.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/utils_1/imports/synth_1/sha128_simple.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -27,9 +27,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 25536
+INFO: [Synth 8-7075] Helper process launched with PID 22844
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1367.020 ; gain = 448.938
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1366.965 ; gain = 446.789
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'RO_PUF' [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/RO_PUF.sv:23]
 INFO: [Synth 8-638] synthesizing module 'sseg_des' [C:/Users/miles/Documents/CPE426/PUF/sseg_des.vhd:54]
@@ -51,89 +51,57 @@ INFO: [Synth 8-6155] done synthesizing module 'slicex0y1' (0#1) [C:/Users/miles/
 INFO: [Synth 8-6157] synthesizing module 'slicex0y0' [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/slicex0y0.sv:22]
 INFO: [Synth 8-6155] done synthesizing module 'slicex0y0' (0#1) [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/slicex0y0.sv:22]
 INFO: [Synth 8-6155] done synthesizing module 'ringOscillator' (0#1) [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/ringOscillator.sv:22]
+WARNING: [Synth 8-6090] variable 'valid' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/RO_PUF.sv:165]
 INFO: [Synth 8-6155] done synthesizing module 'RO_PUF' (0#1) [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/RO_PUF.sv:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1480.785 ; gain = 562.703
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1482.141 ; gain = 561.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 1480.785 ; gain = 562.703
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1482.141 ; gain = 561.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 1480.785 ; gain = 562.703
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1482.141 ; gain = 561.965
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1480.785 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1482.141 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc]
-WARNING: [Vivado 12-507] No nets matched 'ro0/slice0/out'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:10]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:10]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro1/slice0/out'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:11]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:11]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro2/slice0/out'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:12]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:12]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro3/slice0/out'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:13]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:13]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro4/slice0/out'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:14]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:14]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro5/slice0/out'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:15]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:15]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro6/slice0/out'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:16]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:16]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro7/slice0/out'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:17]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:17]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro8/slice0/out'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:18]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:18]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro6/slice2/MUX_3/OUT'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:30]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:30]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-507] No nets matched 'ro6/slice2/MUX_4/OUT'. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:31]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc:31]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/RO_PUF_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/RO_PUF_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1582.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1583.574 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1582.664 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1583.574 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:25 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:25 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'dataOut_reg' [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/latch.sv:30]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -151,17 +119,18 @@ Detailed RTL Component Info :
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 8     
 +---Muxes : 
-	   2 Input   16 Bit        Muxes := 27    
-	   2 Input    9 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 36    
+	   2 Input    9 Bit        Muxes := 5     
+	   2 Input    8 Bit        Muxes := 4     
 	   2 Input    7 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 3     
+	   2 Input    6 Bit        Muxes := 4     
 	   5 Input    4 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 111   
+	   2 Input    4 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 113   
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -179,177 +148,17 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:33 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:41 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-      : ro8/slice2/MUX_2/OUT_inferred/B
-      : ro8/slice2/MUX_2/B
-      : ro8/slice2/MUX_1_out_inferred__0/out
-      : ro8/slice2/MUX_1_out_inferred__0/in0
-      : ro8/slice2/MUX_1_out_inferred/out
-      : ro8/slice2/MUX_1_out_inferred/in0
-      : ro8/slice2/MUX_1/OUT
-      : ro8/slice2/MUX_1/OUT_inferred/OUT
-      : ro8/slice2/MUX_1/OUT_inferred/B
-      : ro8/slice2/MUX_1/B
-      : ro8/slice2/B0_inferred/B0
-      : ro8/slice2/B0_inferred/A
-      : ro8/slice2/A
-      : ro8/slice1o_inferred__0/out
-      : ro8/slice1o_inferred__0/in0
-      : ro8/slice1o_inferred/out
-      : ro8/slice1o_inferred/in0
-      : ro8/slice1/out
-      : ro8/slice1/sliceOUT_inferred__0/out
-      : ro8/slice1/sliceOUT_inferred__0/in0
-      : ro8/slice1/sliceOUT_inferred/out
-      : ro8/slice1/sliceOUT_inferred/in0
-      : ro8/slice1/MUX_2/OUT
-      : ro8/slice1/MUX_2/OUT_inferred/OUT
-      : ro8/slice1/MUX_2/OUT_inferred/B
-      : ro8/slice1/MUX_2/B
-      : ro8/slice1/MUX_1_out_inferred__0/out
-      : ro8/slice1/MUX_1_out_inferred__0/in0
-      : ro8/slice1/MUX_1_out_inferred/out
-      : ro8/slice1/MUX_1_out_inferred/in0
-      : ro8/slice1/MUX_1/OUT
-      : ro8/slice1/MUX_1/OUT_inferred/OUT
-      : ro8/slice1/MUX_1/OUT_inferred/B
-      : ro8/slice1/MUX_1/B
-      : ro8/slice1/B0_inferred/B0
-      : ro8/slice1/B0_inferred/A
-      : ro8/slice1/A
-      : ro8/slice0o_inferred__0/out
-      : ro8/slice0o_inferred__0/in0
-      : ro8/slice0o_inferred/out
-      : ro8/slice0o_inferred/in0
-      : ro8/slice0/out
-      : ro8/slice0/sliceOUT_inferred__0/out
-      : ro8/slice0/sliceOUT_inferred__0/in0
-      : ro8/slice0/sliceOUT_inferred/out
-      : ro8/slice0/sliceOUT_inferred/in0
-      : ro8/slice0/MUX_4/OUT
-      : ro8/slice0/MUX_4/OUT_inferred/OUT
-      : ro8/slice0/MUX_4/OUT_inferred/B
-      : ro8/slice0/MUX_4/B
-      : ro8/slice0/MUX_3_out_inferred__0/out
-      : ro8/slice0/MUX_3_out_inferred__0/in0
-      : ro8/slice0/MUX_3_out_inferred/out
-      : ro8/slice0/MUX_3_out_inferred/in0
-      : ro8/slice0/MUX_3/OUT
-      : ro8/slice0/MUX_3/OUT_inferred/OUT
-      : ro8/slice0/MUX_3/OUT_inferred/B
-      : ro8/slice0/MUX_3/B
-      : ro8/slice0/MUX_2_out_inferred__0/out
-      : ro8/slice0/MUX_2_out_inferred__0/in0
-      : ro8/slice0/MUX_2_out_inferred/out
-      : ro8/slice0/MUX_2_out_inferred/in0
-      : ro8/slice0/MUX_2/OUT
-      : ro8/slice0/MUX_2/OUT_inferred/OUT
-      : ro8/slice0/MUX_2/OUT_inferred/B
-      : ro8/slice0/MUX_2/B
-      : ro8/slice0/B0_inferred/B0
-      : ro8/slice0/B0_inferred/A
-      : ro8/slice0/A
-      : ro8/slice2o_inferred__0/out
-      : ro8/slice2o_inferred__0/in0
-      : ro8/slice2o_inferred/out
-      : ro8/slice2o_inferred/in0
-      : ro8/slice2/out
-      : ro8/slice2/sliceOUT_inferred__0/out
-      : ro8/slice2/sliceOUT_inferred__0/in0
-      : ro8/slice2/sliceOUT_inferred/out
-      : ro8/slice2/sliceOUT_inferred/in0
-      : ro8/slice2/MUX_2/OUT
-      : ro8/slice2/MUX_2/OUT_inferred/OUT
-      : ro5/slice2/MUX_2/OUT_inferred/B
-      : ro5/slice2/MUX_2/B
-      : ro5/slice2/MUX_1_out_inferred__0/out
-      : ro5/slice2/MUX_1_out_inferred__0/in0
-      : ro5/slice2/MUX_1_out_inferred/out
-      : ro5/slice2/MUX_1_out_inferred/in0
-      : ro5/slice2/MUX_1/OUT
-      : ro5/slice2/MUX_1/OUT_inferred/OUT
-      : ro5/slice2/MUX_1/OUT_inferred/B
-      : ro5/slice2/MUX_1/B
-      : ro5/slice2/B0_inferred/B0
-      : ro5/slice2/B0_inferred/A
-      : ro5/slice2/A
-      : ro5/slice1o_inferred__0/out
-      : ro5/slice1o_inferred__0/in0
-      : ro5/slice1o_inferred/out
-      : ro5/slice1o_inferred/in0
-      : ro5/slice1/out
-      : ro5/slice1/sliceOUT_inferred__0/out
-      : ro5/slice1/sliceOUT_inferred__0/in0
-      : ro5/slice1/sliceOUT_inferred/out
-      : ro5/slice1/sliceOUT_inferred/in0
-      : ro5/slice1/MUX_2/OUT
-      : ro5/slice1/MUX_2/OUT_inferred/OUT
-      : ro5/slice1/MUX_2/OUT_inferred/B
-      : ro5/slice1/MUX_2/B
-      : ro5/slice1/MUX_1_out_inferred__0/out
-      : ro5/slice1/MUX_1_out_inferred__0/in0
-      : ro5/slice1/MUX_1_out_inferred/out
-      : ro5/slice1/MUX_1_out_inferred/in0
-      : ro5/slice1/MUX_1/OUT
-      : ro5/slice1/MUX_1/OUT_inferred/OUT
-      : ro5/slice1/MUX_1/OUT_inferred/B
-      : ro5/slice1/MUX_1/B
-      : ro5/slice1/B0_inferred/B0
-      : ro5/slice1/B0_inferred/A
-      : ro5/slice1/A
-      : ro5/slice0o_inferred__0/out
-      : ro5/slice0o_inferred__0/in0
-      : ro5/slice0o_inferred/out
-      : ro5/slice0o_inferred/in0
-      : ro5/slice0/out
-      : ro5/slice0/sliceOUT_inferred__0/out
-      : ro5/slice0/sliceOUT_inferred__0/in0
-      : ro5/slice0/sliceOUT_inferred/out
-      : ro5/slice0/sliceOUT_inferred/in0
-      : ro5/slice0/MUX_4/OUT
-      : ro5/slice0/MUX_4/OUT_inferred/OUT
-      : ro5/slice0/MUX_4/OUT_inferred/B
-      : ro5/slice0/MUX_4/B
-      : ro5/slice0/MUX_3_out_inferred__0/out
-      : ro5/slice0/MUX_3_out_inferred__0/in0
-      : ro5/slice0/MUX_3_out_inferred/out
-      : ro5/slice0/MUX_3_out_inferred/in0
-      : ro5/slice0/MUX_3/OUT
-      : ro5/slice0/MUX_3/OUT_inferred/OUT
-      : ro5/slice0/MUX_3/OUT_inferred/B
-      : ro5/slice0/MUX_3/B
-      : ro5/slice0/MUX_2_out_inferred__0/out
-      : ro5/slice0/MUX_2_out_inferred__0/in0
-      : ro5/slice0/MUX_2_out_inferred/out
-      : ro5/slice0/MUX_2_out_inferred/in0
-      : ro5/slice0/MUX_2/OUT
-      : ro5/slice0/MUX_2/OUT_inferred/OUT
-      : ro5/slice0/MUX_2/OUT_inferred/B
-      : ro5/slice0/MUX_2/B
-      : ro5/slice0/B0_inferred/B0
-      : ro5/slice0/B0_inferred/A
-      : ro5/slice0/A
-      : ro5/slice2o_inferred__0/out
-      : ro5/slice2o_inferred__0/in0
-      : ro5/slice2o_inferred/out
-      : ro5/slice2o_inferred/in0
-      : ro5/slice2/out
-      : ro5/slice2/sliceOUT_inferred__0/out
-      : ro5/slice2/sliceOUT_inferred__0/in0
-      : ro5/slice2/sliceOUT_inferred/out
-      : ro5/slice2/sliceOUT_inferred/in0
-      : ro5/slice2/MUX_2/OUT
-      : ro5/slice2/MUX_2/OUT_inferred/OUT
       : ro4/slice2/MUX_2/OUT_inferred/B
       : ro4/slice2/MUX_2/B
       : ro4/slice2/MUX_1_out_inferred__0/out
@@ -430,406 +239,6 @@ Start Timing Optimization
       : ro4/slice2/sliceOUT_inferred/in0
       : ro4/slice2/MUX_2/OUT
       : ro4/slice2/MUX_2/OUT_inferred/OUT
-      : ro7/slice2/MUX_2/OUT_inferred/B
-      : ro7/slice2/MUX_2/B
-      : ro7/slice2/MUX_1_out_inferred__0/out
-      : ro7/slice2/MUX_1_out_inferred__0/in0
-      : ro7/slice2/MUX_1_out_inferred/out
-      : ro7/slice2/MUX_1_out_inferred/in0
-      : ro7/slice2/MUX_1/OUT
-      : ro7/slice2/MUX_1/OUT_inferred/OUT
-      : ro7/slice2/MUX_1/OUT_inferred/B
-      : ro7/slice2/MUX_1/B
-      : ro7/slice2/B0_inferred/B0
-      : ro7/slice2/B0_inferred/A
-      : ro7/slice2/A
-      : ro7/slice1o_inferred__0/out
-      : ro7/slice1o_inferred__0/in0
-      : ro7/slice1o_inferred/out
-      : ro7/slice1o_inferred/in0
-      : ro7/slice1/out
-      : ro7/slice1/sliceOUT_inferred__0/out
-      : ro7/slice1/sliceOUT_inferred__0/in0
-      : ro7/slice1/sliceOUT_inferred/out
-      : ro7/slice1/sliceOUT_inferred/in0
-      : ro7/slice1/MUX_2/OUT
-      : ro7/slice1/MUX_2/OUT_inferred/OUT
-      : ro7/slice1/MUX_2/OUT_inferred/B
-      : ro7/slice1/MUX_2/B
-      : ro7/slice1/MUX_1_out_inferred__0/out
-      : ro7/slice1/MUX_1_out_inferred__0/in0
-      : ro7/slice1/MUX_1_out_inferred/out
-      : ro7/slice1/MUX_1_out_inferred/in0
-      : ro7/slice1/MUX_1/OUT
-      : ro7/slice1/MUX_1/OUT_inferred/OUT
-      : ro7/slice1/MUX_1/OUT_inferred/B
-      : ro7/slice1/MUX_1/B
-      : ro7/slice1/B0_inferred/B0
-      : ro7/slice1/B0_inferred/A
-      : ro7/slice1/A
-      : ro7/slice0o_inferred__0/out
-      : ro7/slice0o_inferred__0/in0
-      : ro7/slice0o_inferred/out
-      : ro7/slice0o_inferred/in0
-      : ro7/slice0/out
-      : ro7/slice0/sliceOUT_inferred__0/out
-      : ro7/slice0/sliceOUT_inferred__0/in0
-      : ro7/slice0/sliceOUT_inferred/out
-      : ro7/slice0/sliceOUT_inferred/in0
-      : ro7/slice0/MUX_4/OUT
-      : ro7/slice0/MUX_4/OUT_inferred/OUT
-      : ro7/slice0/MUX_4/OUT_inferred/B
-      : ro7/slice0/MUX_4/B
-      : ro7/slice0/MUX_3_out_inferred__0/out
-      : ro7/slice0/MUX_3_out_inferred__0/in0
-      : ro7/slice0/MUX_3_out_inferred/out
-      : ro7/slice0/MUX_3_out_inferred/in0
-      : ro7/slice0/MUX_3/OUT
-      : ro7/slice0/MUX_3/OUT_inferred/OUT
-      : ro7/slice0/MUX_3/OUT_inferred/B
-      : ro7/slice0/MUX_3/B
-      : ro7/slice0/MUX_2_out_inferred__0/out
-      : ro7/slice0/MUX_2_out_inferred__0/in0
-      : ro7/slice0/MUX_2_out_inferred/out
-      : ro7/slice0/MUX_2_out_inferred/in0
-      : ro7/slice0/MUX_2/OUT
-      : ro7/slice0/MUX_2/OUT_inferred/OUT
-      : ro7/slice0/MUX_2/OUT_inferred/B
-      : ro7/slice0/MUX_2/B
-      : ro7/slice0/B0_inferred/B0
-      : ro7/slice0/B0_inferred/A
-      : ro7/slice0/A
-      : ro7/slice2o_inferred__0/out
-      : ro7/slice2o_inferred__0/in0
-      : ro7/slice2o_inferred/out
-      : ro7/slice2o_inferred/in0
-      : ro7/slice2/out
-      : ro7/slice2/sliceOUT_inferred__0/out
-      : ro7/slice2/sliceOUT_inferred__0/in0
-      : ro7/slice2/sliceOUT_inferred/out
-      : ro7/slice2/sliceOUT_inferred/in0
-      : ro7/slice2/MUX_2/OUT
-      : ro7/slice2/MUX_2/OUT_inferred/OUT
-      : ro6/slice2/MUX_2/OUT_inferred/B
-      : ro6/slice2/MUX_2/B
-      : ro6/slice2/MUX_1_out_inferred__0/out
-      : ro6/slice2/MUX_1_out_inferred__0/in0
-      : ro6/slice2/MUX_1_out_inferred/out
-      : ro6/slice2/MUX_1_out_inferred/in0
-      : ro6/slice2/MUX_1/OUT
-      : ro6/slice2/MUX_1/OUT_inferred/OUT
-      : ro6/slice2/MUX_1/OUT_inferred/B
-      : ro6/slice2/MUX_1/B
-      : ro6/slice2/B0_inferred/B0
-      : ro6/slice2/B0_inferred/A
-      : ro6/slice2/A
-      : ro6/slice1o_inferred__0/out
-      : ro6/slice1o_inferred__0/in0
-      : ro6/slice1o_inferred/out
-      : ro6/slice1o_inferred/in0
-      : ro6/slice1/out
-      : ro6/slice1/sliceOUT_inferred__0/out
-      : ro6/slice1/sliceOUT_inferred__0/in0
-      : ro6/slice1/sliceOUT_inferred/out
-      : ro6/slice1/sliceOUT_inferred/in0
-      : ro6/slice1/MUX_2/OUT
-      : ro6/slice1/MUX_2/OUT_inferred/OUT
-      : ro6/slice1/MUX_2/OUT_inferred/B
-      : ro6/slice1/MUX_2/B
-      : ro6/slice1/MUX_1_out_inferred__0/out
-      : ro6/slice1/MUX_1_out_inferred__0/in0
-      : ro6/slice1/MUX_1_out_inferred/out
-      : ro6/slice1/MUX_1_out_inferred/in0
-      : ro6/slice1/MUX_1/OUT
-      : ro6/slice1/MUX_1/OUT_inferred/OUT
-      : ro6/slice1/MUX_1/OUT_inferred/B
-      : ro6/slice1/MUX_1/B
-      : ro6/slice1/B0_inferred/B0
-      : ro6/slice1/B0_inferred/A
-      : ro6/slice1/A
-      : ro6/slice0o_inferred__0/out
-      : ro6/slice0o_inferred__0/in0
-      : ro6/slice0o_inferred/out
-      : ro6/slice0o_inferred/in0
-      : ro6/slice0/out
-      : ro6/slice0/sliceOUT_inferred__0/out
-      : ro6/slice0/sliceOUT_inferred__0/in0
-      : ro6/slice0/sliceOUT_inferred/out
-      : ro6/slice0/sliceOUT_inferred/in0
-      : ro6/slice0/MUX_4/OUT
-      : ro6/slice0/MUX_4/OUT_inferred/OUT
-      : ro6/slice0/MUX_4/OUT_inferred/B
-      : ro6/slice0/MUX_4/B
-      : ro6/slice0/MUX_3_out_inferred__0/out
-      : ro6/slice0/MUX_3_out_inferred__0/in0
-      : ro6/slice0/MUX_3_out_inferred/out
-      : ro6/slice0/MUX_3_out_inferred/in0
-      : ro6/slice0/MUX_3/OUT
-      : ro6/slice0/MUX_3/OUT_inferred/OUT
-      : ro6/slice0/MUX_3/OUT_inferred/B
-      : ro6/slice0/MUX_3/B
-      : ro6/slice0/MUX_2_out_inferred__0/out
-      : ro6/slice0/MUX_2_out_inferred__0/in0
-      : ro6/slice0/MUX_2_out_inferred/out
-      : ro6/slice0/MUX_2_out_inferred/in0
-      : ro6/slice0/MUX_2/OUT
-      : ro6/slice0/MUX_2/OUT_inferred/OUT
-      : ro6/slice0/MUX_2/OUT_inferred/B
-      : ro6/slice0/MUX_2/B
-      : ro6/slice0/B0_inferred/B0
-      : ro6/slice0/B0_inferred/A
-      : ro6/slice0/A
-      : ro6/slice2o_inferred__0/out
-      : ro6/slice2o_inferred__0/in0
-      : ro6/slice2o_inferred/out
-      : ro6/slice2o_inferred/in0
-      : ro6/slice2/out
-      : ro6/slice2/sliceOUT_inferred__0/out
-      : ro6/slice2/sliceOUT_inferred__0/in0
-      : ro6/slice2/sliceOUT_inferred/out
-      : ro6/slice2/sliceOUT_inferred/in0
-      : ro6/slice2/MUX_2/OUT
-      : ro6/slice2/MUX_2/OUT_inferred/OUT
-      : ro3/slice2/MUX_2/OUT_inferred/B
-      : ro3/slice2/MUX_2/B
-      : ro3/slice2/MUX_1_out_inferred__0/out
-      : ro3/slice2/MUX_1_out_inferred__0/in0
-      : ro3/slice2/MUX_1_out_inferred/out
-      : ro3/slice2/MUX_1_out_inferred/in0
-      : ro3/slice2/MUX_1/OUT
-      : ro3/slice2/MUX_1/OUT_inferred/OUT
-      : ro3/slice2/MUX_1/OUT_inferred/B
-      : ro3/slice2/MUX_1/B
-      : ro3/slice2/B0_inferred/B0
-      : ro3/slice2/B0_inferred/A
-      : ro3/slice2/A
-      : ro3/slice1o_inferred__0/out
-      : ro3/slice1o_inferred__0/in0
-      : ro3/slice1o_inferred/out
-      : ro3/slice1o_inferred/in0
-      : ro3/slice1/out
-      : ro3/slice1/sliceOUT_inferred__0/out
-      : ro3/slice1/sliceOUT_inferred__0/in0
-      : ro3/slice1/sliceOUT_inferred/out
-      : ro3/slice1/sliceOUT_inferred/in0
-      : ro3/slice1/MUX_2/OUT
-      : ro3/slice1/MUX_2/OUT_inferred/OUT
-      : ro3/slice1/MUX_2/OUT_inferred/B
-      : ro3/slice1/MUX_2/B
-      : ro3/slice1/MUX_1_out_inferred__0/out
-      : ro3/slice1/MUX_1_out_inferred__0/in0
-      : ro3/slice1/MUX_1_out_inferred/out
-      : ro3/slice1/MUX_1_out_inferred/in0
-      : ro3/slice1/MUX_1/OUT
-      : ro3/slice1/MUX_1/OUT_inferred/OUT
-      : ro3/slice1/MUX_1/OUT_inferred/B
-      : ro3/slice1/MUX_1/B
-      : ro3/slice1/B0_inferred/B0
-      : ro3/slice1/B0_inferred/A
-      : ro3/slice1/A
-      : ro3/slice0o_inferred__0/out
-      : ro3/slice0o_inferred__0/in0
-      : ro3/slice0o_inferred/out
-      : ro3/slice0o_inferred/in0
-      : ro3/slice0/out
-      : ro3/slice0/sliceOUT_inferred__0/out
-      : ro3/slice0/sliceOUT_inferred__0/in0
-      : ro3/slice0/sliceOUT_inferred/out
-      : ro3/slice0/sliceOUT_inferred/in0
-      : ro3/slice0/MUX_4/OUT
-      : ro3/slice0/MUX_4/OUT_inferred/OUT
-      : ro3/slice0/MUX_4/OUT_inferred/B
-      : ro3/slice0/MUX_4/B
-      : ro3/slice0/MUX_3_out_inferred__0/out
-      : ro3/slice0/MUX_3_out_inferred__0/in0
-      : ro3/slice0/MUX_3_out_inferred/out
-      : ro3/slice0/MUX_3_out_inferred/in0
-      : ro3/slice0/MUX_3/OUT
-      : ro3/slice0/MUX_3/OUT_inferred/OUT
-      : ro3/slice0/MUX_3/OUT_inferred/B
-      : ro3/slice0/MUX_3/B
-      : ro3/slice0/MUX_2_out_inferred__0/out
-      : ro3/slice0/MUX_2_out_inferred__0/in0
-      : ro3/slice0/MUX_2_out_inferred/out
-      : ro3/slice0/MUX_2_out_inferred/in0
-      : ro3/slice0/MUX_2/OUT
-      : ro3/slice0/MUX_2/OUT_inferred/OUT
-      : ro3/slice0/MUX_2/OUT_inferred/B
-      : ro3/slice0/MUX_2/B
-      : ro3/slice0/B0_inferred/B0
-      : ro3/slice0/B0_inferred/A
-      : ro3/slice0/A
-      : ro3/slice2o_inferred__0/out
-      : ro3/slice2o_inferred__0/in0
-      : ro3/slice2o_inferred/out
-      : ro3/slice2o_inferred/in0
-      : ro3/slice2/out
-      : ro3/slice2/sliceOUT_inferred__0/out
-      : ro3/slice2/sliceOUT_inferred__0/in0
-      : ro3/slice2/sliceOUT_inferred/out
-      : ro3/slice2/sliceOUT_inferred/in0
-      : ro3/slice2/MUX_2/OUT
-      : ro3/slice2/MUX_2/OUT_inferred/OUT
-      : ro2/slice2/MUX_2/OUT_inferred/B
-      : ro2/slice2/MUX_2/B
-      : ro2/slice2/MUX_1_out_inferred__0/out
-      : ro2/slice2/MUX_1_out_inferred__0/in0
-      : ro2/slice2/MUX_1_out_inferred/out
-      : ro2/slice2/MUX_1_out_inferred/in0
-      : ro2/slice2/MUX_1/OUT
-      : ro2/slice2/MUX_1/OUT_inferred/OUT
-      : ro2/slice2/MUX_1/OUT_inferred/B
-      : ro2/slice2/MUX_1/B
-      : ro2/slice2/B0_inferred/B0
-      : ro2/slice2/B0_inferred/A
-      : ro2/slice2/A
-      : ro2/slice1o_inferred__0/out
-      : ro2/slice1o_inferred__0/in0
-      : ro2/slice1o_inferred/out
-      : ro2/slice1o_inferred/in0
-      : ro2/slice1/out
-      : ro2/slice1/sliceOUT_inferred__0/out
-      : ro2/slice1/sliceOUT_inferred__0/in0
-      : ro2/slice1/sliceOUT_inferred/out
-      : ro2/slice1/sliceOUT_inferred/in0
-      : ro2/slice1/MUX_2/OUT
-      : ro2/slice1/MUX_2/OUT_inferred/OUT
-      : ro2/slice1/MUX_2/OUT_inferred/B
-      : ro2/slice1/MUX_2/B
-      : ro2/slice1/MUX_1_out_inferred__0/out
-      : ro2/slice1/MUX_1_out_inferred__0/in0
-      : ro2/slice1/MUX_1_out_inferred/out
-      : ro2/slice1/MUX_1_out_inferred/in0
-      : ro2/slice1/MUX_1/OUT
-      : ro2/slice1/MUX_1/OUT_inferred/OUT
-      : ro2/slice1/MUX_1/OUT_inferred/B
-      : ro2/slice1/MUX_1/B
-      : ro2/slice1/B0_inferred/B0
-      : ro2/slice1/B0_inferred/A
-      : ro2/slice1/A
-      : ro2/slice0o_inferred__0/out
-      : ro2/slice0o_inferred__0/in0
-      : ro2/slice0o_inferred/out
-      : ro2/slice0o_inferred/in0
-      : ro2/slice0/out
-      : ro2/slice0/sliceOUT_inferred__0/out
-      : ro2/slice0/sliceOUT_inferred__0/in0
-      : ro2/slice0/sliceOUT_inferred/out
-      : ro2/slice0/sliceOUT_inferred/in0
-      : ro2/slice0/MUX_4/OUT
-      : ro2/slice0/MUX_4/OUT_inferred/OUT
-      : ro2/slice0/MUX_4/OUT_inferred/B
-      : ro2/slice0/MUX_4/B
-      : ro2/slice0/MUX_3_out_inferred__0/out
-      : ro2/slice0/MUX_3_out_inferred__0/in0
-      : ro2/slice0/MUX_3_out_inferred/out
-      : ro2/slice0/MUX_3_out_inferred/in0
-      : ro2/slice0/MUX_3/OUT
-      : ro2/slice0/MUX_3/OUT_inferred/OUT
-      : ro2/slice0/MUX_3/OUT_inferred/B
-      : ro2/slice0/MUX_3/B
-      : ro2/slice0/MUX_2_out_inferred__0/out
-      : ro2/slice0/MUX_2_out_inferred__0/in0
-      : ro2/slice0/MUX_2_out_inferred/out
-      : ro2/slice0/MUX_2_out_inferred/in0
-      : ro2/slice0/MUX_2/OUT
-      : ro2/slice0/MUX_2/OUT_inferred/OUT
-      : ro2/slice0/MUX_2/OUT_inferred/B
-      : ro2/slice0/MUX_2/B
-      : ro2/slice0/B0_inferred/B0
-      : ro2/slice0/B0_inferred/A
-      : ro2/slice0/A
-      : ro2/slice2o_inferred__0/out
-      : ro2/slice2o_inferred__0/in0
-      : ro2/slice2o_inferred/out
-      : ro2/slice2o_inferred/in0
-      : ro2/slice2/out
-      : ro2/slice2/sliceOUT_inferred__0/out
-      : ro2/slice2/sliceOUT_inferred__0/in0
-      : ro2/slice2/sliceOUT_inferred/out
-      : ro2/slice2/sliceOUT_inferred/in0
-      : ro2/slice2/MUX_2/OUT
-      : ro2/slice2/MUX_2/OUT_inferred/OUT
-      : ro1/slice2/MUX_2/OUT_inferred/B
-      : ro1/slice2/MUX_2/B
-      : ro1/slice2/MUX_1_out_inferred__0/out
-      : ro1/slice2/MUX_1_out_inferred__0/in0
-      : ro1/slice2/MUX_1_out_inferred/out
-      : ro1/slice2/MUX_1_out_inferred/in0
-      : ro1/slice2/MUX_1/OUT
-      : ro1/slice2/MUX_1/OUT_inferred/OUT
-      : ro1/slice2/MUX_1/OUT_inferred/B
-      : ro1/slice2/MUX_1/B
-      : ro1/slice2/B0_inferred/B0
-      : ro1/slice2/B0_inferred/A
-      : ro1/slice2/A
-      : ro1/slice1o_inferred__0/out
-      : ro1/slice1o_inferred__0/in0
-      : ro1/slice1o_inferred/out
-      : ro1/slice1o_inferred/in0
-      : ro1/slice1/out
-      : ro1/slice1/sliceOUT_inferred__0/out
-      : ro1/slice1/sliceOUT_inferred__0/in0
-      : ro1/slice1/sliceOUT_inferred/out
-      : ro1/slice1/sliceOUT_inferred/in0
-      : ro1/slice1/MUX_2/OUT
-      : ro1/slice1/MUX_2/OUT_inferred/OUT
-      : ro1/slice1/MUX_2/OUT_inferred/B
-      : ro1/slice1/MUX_2/B
-      : ro1/slice1/MUX_1_out_inferred__0/out
-      : ro1/slice1/MUX_1_out_inferred__0/in0
-      : ro1/slice1/MUX_1_out_inferred/out
-      : ro1/slice1/MUX_1_out_inferred/in0
-      : ro1/slice1/MUX_1/OUT
-      : ro1/slice1/MUX_1/OUT_inferred/OUT
-      : ro1/slice1/MUX_1/OUT_inferred/B
-      : ro1/slice1/MUX_1/B
-      : ro1/slice1/B0_inferred/B0
-      : ro1/slice1/B0_inferred/A
-      : ro1/slice1/A
-      : ro1/slice0o_inferred__0/out
-      : ro1/slice0o_inferred__0/in0
-      : ro1/slice0o_inferred/out
-      : ro1/slice0o_inferred/in0
-      : ro1/slice0/out
-      : ro1/slice0/sliceOUT_inferred__0/out
-      : ro1/slice0/sliceOUT_inferred__0/in0
-      : ro1/slice0/sliceOUT_inferred/out
-      : ro1/slice0/sliceOUT_inferred/in0
-      : ro1/slice0/MUX_4/OUT
-      : ro1/slice0/MUX_4/OUT_inferred/OUT
-      : ro1/slice0/MUX_4/OUT_inferred/B
-      : ro1/slice0/MUX_4/B
-      : ro1/slice0/MUX_3_out_inferred__0/out
-      : ro1/slice0/MUX_3_out_inferred__0/in0
-      : ro1/slice0/MUX_3_out_inferred/out
-      : ro1/slice0/MUX_3_out_inferred/in0
-      : ro1/slice0/MUX_3/OUT
-      : ro1/slice0/MUX_3/OUT_inferred/OUT
-      : ro1/slice0/MUX_3/OUT_inferred/B
-      : ro1/slice0/MUX_3/B
-      : ro1/slice0/MUX_2_out_inferred__0/out
-      : ro1/slice0/MUX_2_out_inferred__0/in0
-      : ro1/slice0/MUX_2_out_inferred/out
-      : ro1/slice0/MUX_2_out_inferred/in0
-      : ro1/slice0/MUX_2/OUT
-      : ro1/slice0/MUX_2/OUT_inferred/OUT
-      : ro1/slice0/MUX_2/OUT_inferred/B
-      : ro1/slice0/MUX_2/B
-      : ro1/slice0/B0_inferred/B0
-      : ro1/slice0/B0_inferred/A
-      : ro1/slice0/A
-      : ro1/slice2o_inferred__0/out
-      : ro1/slice2o_inferred__0/in0
-      : ro1/slice2o_inferred/out
-      : ro1/slice2o_inferred/in0
-      : ro1/slice2/out
-      : ro1/slice2/sliceOUT_inferred__0/out
-      : ro1/slice2/sliceOUT_inferred__0/in0
-      : ro1/slice2/sliceOUT_inferred/out
-      : ro1/slice2/sliceOUT_inferred/in0
-      : ro1/slice2/MUX_2/OUT
-      : ro1/slice2/MUX_2/OUT_inferred/OUT
       : ro0/slice2/MUX_2/OUT_inferred/B
       : ro0/slice2/MUX_2/B
       : ro0/slice2/MUX_1_out_inferred__0/out
@@ -910,6 +319,566 @@ Start Timing Optimization
       : ro0/slice2/sliceOUT_inferred/in0
       : ro0/slice2/MUX_2/OUT
       : ro0/slice2/MUX_2/OUT_inferred/OUT
+      : ro8/slice2/MUX_2/OUT_inferred/B
+      : ro8/slice2/MUX_2/B
+      : ro8/slice2/MUX_1_out_inferred__0/out
+      : ro8/slice2/MUX_1_out_inferred__0/in0
+      : ro8/slice2/MUX_1_out_inferred/out
+      : ro8/slice2/MUX_1_out_inferred/in0
+      : ro8/slice2/MUX_1/OUT
+      : ro8/slice2/MUX_1/OUT_inferred/OUT
+      : ro8/slice2/MUX_1/OUT_inferred/B
+      : ro8/slice2/MUX_1/B
+      : ro8/slice2/B0_inferred/B0
+      : ro8/slice2/B0_inferred/A
+      : ro8/slice2/A
+      : ro8/slice1o_inferred__0/out
+      : ro8/slice1o_inferred__0/in0
+      : ro8/slice1o_inferred/out
+      : ro8/slice1o_inferred/in0
+      : ro8/slice1/out
+      : ro8/slice1/sliceOUT_inferred__0/out
+      : ro8/slice1/sliceOUT_inferred__0/in0
+      : ro8/slice1/sliceOUT_inferred/out
+      : ro8/slice1/sliceOUT_inferred/in0
+      : ro8/slice1/MUX_2/OUT
+      : ro8/slice1/MUX_2/OUT_inferred/OUT
+      : ro8/slice1/MUX_2/OUT_inferred/B
+      : ro8/slice1/MUX_2/B
+      : ro8/slice1/MUX_1_out_inferred__0/out
+      : ro8/slice1/MUX_1_out_inferred__0/in0
+      : ro8/slice1/MUX_1_out_inferred/out
+      : ro8/slice1/MUX_1_out_inferred/in0
+      : ro8/slice1/MUX_1/OUT
+      : ro8/slice1/MUX_1/OUT_inferred/OUT
+      : ro8/slice1/MUX_1/OUT_inferred/B
+      : ro8/slice1/MUX_1/B
+      : ro8/slice1/B0_inferred/B0
+      : ro8/slice1/B0_inferred/A
+      : ro8/slice1/A
+      : ro8/slice0o_inferred__0/out
+      : ro8/slice0o_inferred__0/in0
+      : ro8/slice0o_inferred/out
+      : ro8/slice0o_inferred/in0
+      : ro8/slice0/out
+      : ro8/slice0/sliceOUT_inferred__0/out
+      : ro8/slice0/sliceOUT_inferred__0/in0
+      : ro8/slice0/sliceOUT_inferred/out
+      : ro8/slice0/sliceOUT_inferred/in0
+      : ro8/slice0/MUX_4/OUT
+      : ro8/slice0/MUX_4/OUT_inferred/OUT
+      : ro8/slice0/MUX_4/OUT_inferred/B
+      : ro8/slice0/MUX_4/B
+      : ro8/slice0/MUX_3_out_inferred__0/out
+      : ro8/slice0/MUX_3_out_inferred__0/in0
+      : ro8/slice0/MUX_3_out_inferred/out
+      : ro8/slice0/MUX_3_out_inferred/in0
+      : ro8/slice0/MUX_3/OUT
+      : ro8/slice0/MUX_3/OUT_inferred/OUT
+      : ro8/slice0/MUX_3/OUT_inferred/B
+      : ro8/slice0/MUX_3/B
+      : ro8/slice0/MUX_2_out_inferred__0/out
+      : ro8/slice0/MUX_2_out_inferred__0/in0
+      : ro8/slice0/MUX_2_out_inferred/out
+      : ro8/slice0/MUX_2_out_inferred/in0
+      : ro8/slice0/MUX_2/OUT
+      : ro8/slice0/MUX_2/OUT_inferred/OUT
+      : ro8/slice0/MUX_2/OUT_inferred/B
+      : ro8/slice0/MUX_2/B
+      : ro8/slice0/B0_inferred/B0
+      : ro8/slice0/B0_inferred/A
+      : ro8/slice0/A
+      : ro8/slice2o_inferred__0/out
+      : ro8/slice2o_inferred__0/in0
+      : ro8/slice2o_inferred/out
+      : ro8/slice2o_inferred/in0
+      : ro8/slice2/out
+      : ro8/slice2/sliceOUT_inferred__0/out
+      : ro8/slice2/sliceOUT_inferred__0/in0
+      : ro8/slice2/sliceOUT_inferred/out
+      : ro8/slice2/sliceOUT_inferred/in0
+      : ro8/slice2/MUX_2/OUT
+      : ro8/slice2/MUX_2/OUT_inferred/OUT
+      : ro7/slice2/MUX_2/OUT_inferred/B
+      : ro7/slice2/MUX_2/B
+      : ro7/slice2/MUX_1_out_inferred__0/out
+      : ro7/slice2/MUX_1_out_inferred__0/in0
+      : ro7/slice2/MUX_1_out_inferred/out
+      : ro7/slice2/MUX_1_out_inferred/in0
+      : ro7/slice2/MUX_1/OUT
+      : ro7/slice2/MUX_1/OUT_inferred/OUT
+      : ro7/slice2/MUX_1/OUT_inferred/B
+      : ro7/slice2/MUX_1/B
+      : ro7/slice2/B0_inferred/B0
+      : ro7/slice2/B0_inferred/A
+      : ro7/slice2/A
+      : ro7/slice1o_inferred__0/out
+      : ro7/slice1o_inferred__0/in0
+      : ro7/slice1o_inferred/out
+      : ro7/slice1o_inferred/in0
+      : ro7/slice1/out
+      : ro7/slice1/sliceOUT_inferred__0/out
+      : ro7/slice1/sliceOUT_inferred__0/in0
+      : ro7/slice1/sliceOUT_inferred/out
+      : ro7/slice1/sliceOUT_inferred/in0
+      : ro7/slice1/MUX_2/OUT
+      : ro7/slice1/MUX_2/OUT_inferred/OUT
+      : ro7/slice1/MUX_2/OUT_inferred/B
+      : ro7/slice1/MUX_2/B
+      : ro7/slice1/MUX_1_out_inferred__0/out
+      : ro7/slice1/MUX_1_out_inferred__0/in0
+      : ro7/slice1/MUX_1_out_inferred/out
+      : ro7/slice1/MUX_1_out_inferred/in0
+      : ro7/slice1/MUX_1/OUT
+      : ro7/slice1/MUX_1/OUT_inferred/OUT
+      : ro7/slice1/MUX_1/OUT_inferred/B
+      : ro7/slice1/MUX_1/B
+      : ro7/slice1/B0_inferred/B0
+      : ro7/slice1/B0_inferred/A
+      : ro7/slice1/A
+      : ro7/slice0o_inferred__0/out
+      : ro7/slice0o_inferred__0/in0
+      : ro7/slice0o_inferred/out
+      : ro7/slice0o_inferred/in0
+      : ro7/slice0/out
+      : ro7/slice0/sliceOUT_inferred__0/out
+      : ro7/slice0/sliceOUT_inferred__0/in0
+      : ro7/slice0/sliceOUT_inferred/out
+      : ro7/slice0/sliceOUT_inferred/in0
+      : ro7/slice0/MUX_4/OUT
+      : ro7/slice0/MUX_4/OUT_inferred/OUT
+      : ro7/slice0/MUX_4/OUT_inferred/B
+      : ro7/slice0/MUX_4/B
+      : ro7/slice0/MUX_3_out_inferred__0/out
+      : ro7/slice0/MUX_3_out_inferred__0/in0
+      : ro7/slice0/MUX_3_out_inferred/out
+      : ro7/slice0/MUX_3_out_inferred/in0
+      : ro7/slice0/MUX_3/OUT
+      : ro7/slice0/MUX_3/OUT_inferred/OUT
+      : ro7/slice0/MUX_3/OUT_inferred/B
+      : ro7/slice0/MUX_3/B
+      : ro7/slice0/MUX_2_out_inferred__0/out
+      : ro7/slice0/MUX_2_out_inferred__0/in0
+      : ro7/slice0/MUX_2_out_inferred/out
+      : ro7/slice0/MUX_2_out_inferred/in0
+      : ro7/slice0/MUX_2/OUT
+      : ro7/slice0/MUX_2/OUT_inferred/OUT
+      : ro7/slice0/MUX_2/OUT_inferred/B
+      : ro7/slice0/MUX_2/B
+      : ro7/slice0/B0_inferred/B0
+      : ro7/slice0/B0_inferred/A
+      : ro7/slice0/A
+      : ro7/slice2o_inferred__0/out
+      : ro7/slice2o_inferred__0/in0
+      : ro7/slice2o_inferred/out
+      : ro7/slice2o_inferred/in0
+      : ro7/slice2/out
+      : ro7/slice2/sliceOUT_inferred__0/out
+      : ro7/slice2/sliceOUT_inferred__0/in0
+      : ro7/slice2/sliceOUT_inferred/out
+      : ro7/slice2/sliceOUT_inferred/in0
+      : ro7/slice2/MUX_2/OUT
+      : ro7/slice2/MUX_2/OUT_inferred/OUT
+      : ro3/slice2/MUX_2/OUT_inferred/B
+      : ro3/slice2/MUX_2/B
+      : ro3/slice2/MUX_1_out_inferred__0/out
+      : ro3/slice2/MUX_1_out_inferred__0/in0
+      : ro3/slice2/MUX_1_out_inferred/out
+      : ro3/slice2/MUX_1_out_inferred/in0
+      : ro3/slice2/MUX_1/OUT
+      : ro3/slice2/MUX_1/OUT_inferred/OUT
+      : ro3/slice2/MUX_1/OUT_inferred/B
+      : ro3/slice2/MUX_1/B
+      : ro3/slice2/B0_inferred/B0
+      : ro3/slice2/B0_inferred/A
+      : ro3/slice2/A
+      : ro3/slice1o_inferred__0/out
+      : ro3/slice1o_inferred__0/in0
+      : ro3/slice1o_inferred/out
+      : ro3/slice1o_inferred/in0
+      : ro3/slice1/out
+      : ro3/slice1/sliceOUT_inferred__0/out
+      : ro3/slice1/sliceOUT_inferred__0/in0
+      : ro3/slice1/sliceOUT_inferred/out
+      : ro3/slice1/sliceOUT_inferred/in0
+      : ro3/slice1/MUX_2/OUT
+      : ro3/slice1/MUX_2/OUT_inferred/OUT
+      : ro3/slice1/MUX_2/OUT_inferred/B
+      : ro3/slice1/MUX_2/B
+      : ro3/slice1/MUX_1_out_inferred__0/out
+      : ro3/slice1/MUX_1_out_inferred__0/in0
+      : ro3/slice1/MUX_1_out_inferred/out
+      : ro3/slice1/MUX_1_out_inferred/in0
+      : ro3/slice1/MUX_1/OUT
+      : ro3/slice1/MUX_1/OUT_inferred/OUT
+      : ro3/slice1/MUX_1/OUT_inferred/B
+      : ro3/slice1/MUX_1/B
+      : ro3/slice1/B0_inferred/B0
+      : ro3/slice1/B0_inferred/A
+      : ro3/slice1/A
+      : ro3/slice0o_inferred__0/out
+      : ro3/slice0o_inferred__0/in0
+      : ro3/slice0o_inferred/out
+      : ro3/slice0o_inferred/in0
+      : ro3/slice0/out
+      : ro3/slice0/sliceOUT_inferred__0/out
+      : ro3/slice0/sliceOUT_inferred__0/in0
+      : ro3/slice0/sliceOUT_inferred/out
+      : ro3/slice0/sliceOUT_inferred/in0
+      : ro3/slice0/MUX_4/OUT
+      : ro3/slice0/MUX_4/OUT_inferred/OUT
+      : ro3/slice0/MUX_4/OUT_inferred/B
+      : ro3/slice0/MUX_4/B
+      : ro3/slice0/MUX_3_out_inferred__0/out
+      : ro3/slice0/MUX_3_out_inferred__0/in0
+      : ro3/slice0/MUX_3_out_inferred/out
+      : ro3/slice0/MUX_3_out_inferred/in0
+      : ro3/slice0/MUX_3/OUT
+      : ro3/slice0/MUX_3/OUT_inferred/OUT
+      : ro3/slice0/MUX_3/OUT_inferred/B
+      : ro3/slice0/MUX_3/B
+      : ro3/slice0/MUX_2_out_inferred__0/out
+      : ro3/slice0/MUX_2_out_inferred__0/in0
+      : ro3/slice0/MUX_2_out_inferred/out
+      : ro3/slice0/MUX_2_out_inferred/in0
+      : ro3/slice0/MUX_2/OUT
+      : ro3/slice0/MUX_2/OUT_inferred/OUT
+      : ro3/slice0/MUX_2/OUT_inferred/B
+      : ro3/slice0/MUX_2/B
+      : ro3/slice0/B0_inferred/B0
+      : ro3/slice0/B0_inferred/A
+      : ro3/slice0/A
+      : ro3/slice2o_inferred__0/out
+      : ro3/slice2o_inferred__0/in0
+      : ro3/slice2o_inferred/out
+      : ro3/slice2o_inferred/in0
+      : ro3/slice2/out
+      : ro3/slice2/sliceOUT_inferred__0/out
+      : ro3/slice2/sliceOUT_inferred__0/in0
+      : ro3/slice2/sliceOUT_inferred/out
+      : ro3/slice2/sliceOUT_inferred/in0
+      : ro3/slice2/MUX_2/OUT
+      : ro3/slice2/MUX_2/OUT_inferred/OUT
+      : ro5/slice2/MUX_2/OUT_inferred/B
+      : ro5/slice2/MUX_2/B
+      : ro5/slice2/MUX_1_out_inferred__0/out
+      : ro5/slice2/MUX_1_out_inferred__0/in0
+      : ro5/slice2/MUX_1_out_inferred/out
+      : ro5/slice2/MUX_1_out_inferred/in0
+      : ro5/slice2/MUX_1/OUT
+      : ro5/slice2/MUX_1/OUT_inferred/OUT
+      : ro5/slice2/MUX_1/OUT_inferred/B
+      : ro5/slice2/MUX_1/B
+      : ro5/slice2/B0_inferred/B0
+      : ro5/slice2/B0_inferred/A
+      : ro5/slice2/A
+      : ro5/slice1o_inferred__0/out
+      : ro5/slice1o_inferred__0/in0
+      : ro5/slice1o_inferred/out
+      : ro5/slice1o_inferred/in0
+      : ro5/slice1/out
+      : ro5/slice1/sliceOUT_inferred__0/out
+      : ro5/slice1/sliceOUT_inferred__0/in0
+      : ro5/slice1/sliceOUT_inferred/out
+      : ro5/slice1/sliceOUT_inferred/in0
+      : ro5/slice1/MUX_2/OUT
+      : ro5/slice1/MUX_2/OUT_inferred/OUT
+      : ro5/slice1/MUX_2/OUT_inferred/B
+      : ro5/slice1/MUX_2/B
+      : ro5/slice1/MUX_1_out_inferred__0/out
+      : ro5/slice1/MUX_1_out_inferred__0/in0
+      : ro5/slice1/MUX_1_out_inferred/out
+      : ro5/slice1/MUX_1_out_inferred/in0
+      : ro5/slice1/MUX_1/OUT
+      : ro5/slice1/MUX_1/OUT_inferred/OUT
+      : ro5/slice1/MUX_1/OUT_inferred/B
+      : ro5/slice1/MUX_1/B
+      : ro5/slice1/B0_inferred/B0
+      : ro5/slice1/B0_inferred/A
+      : ro5/slice1/A
+      : ro5/slice0o_inferred__0/out
+      : ro5/slice0o_inferred__0/in0
+      : ro5/slice0o_inferred/out
+      : ro5/slice0o_inferred/in0
+      : ro5/slice0/out
+      : ro5/slice0/sliceOUT_inferred__0/out
+      : ro5/slice0/sliceOUT_inferred__0/in0
+      : ro5/slice0/sliceOUT_inferred/out
+      : ro5/slice0/sliceOUT_inferred/in0
+      : ro5/slice0/MUX_4/OUT
+      : ro5/slice0/MUX_4/OUT_inferred/OUT
+      : ro5/slice0/MUX_4/OUT_inferred/B
+      : ro5/slice0/MUX_4/B
+      : ro5/slice0/MUX_3_out_inferred__0/out
+      : ro5/slice0/MUX_3_out_inferred__0/in0
+      : ro5/slice0/MUX_3_out_inferred/out
+      : ro5/slice0/MUX_3_out_inferred/in0
+      : ro5/slice0/MUX_3/OUT
+      : ro5/slice0/MUX_3/OUT_inferred/OUT
+      : ro5/slice0/MUX_3/OUT_inferred/B
+      : ro5/slice0/MUX_3/B
+      : ro5/slice0/MUX_2_out_inferred__0/out
+      : ro5/slice0/MUX_2_out_inferred__0/in0
+      : ro5/slice0/MUX_2_out_inferred/out
+      : ro5/slice0/MUX_2_out_inferred/in0
+      : ro5/slice0/MUX_2/OUT
+      : ro5/slice0/MUX_2/OUT_inferred/OUT
+      : ro5/slice0/MUX_2/OUT_inferred/B
+      : ro5/slice0/MUX_2/B
+      : ro5/slice0/B0_inferred/B0
+      : ro5/slice0/B0_inferred/A
+      : ro5/slice0/A
+      : ro5/slice2o_inferred__0/out
+      : ro5/slice2o_inferred__0/in0
+      : ro5/slice2o_inferred/out
+      : ro5/slice2o_inferred/in0
+      : ro5/slice2/out
+      : ro5/slice2/sliceOUT_inferred__0/out
+      : ro5/slice2/sliceOUT_inferred__0/in0
+      : ro5/slice2/sliceOUT_inferred/out
+      : ro5/slice2/sliceOUT_inferred/in0
+      : ro5/slice2/MUX_2/OUT
+      : ro5/slice2/MUX_2/OUT_inferred/OUT
+      : ro1/slice2/MUX_2/OUT_inferred/B
+      : ro1/slice2/MUX_2/B
+      : ro1/slice2/MUX_1_out_inferred__0/out
+      : ro1/slice2/MUX_1_out_inferred__0/in0
+      : ro1/slice2/MUX_1_out_inferred/out
+      : ro1/slice2/MUX_1_out_inferred/in0
+      : ro1/slice2/MUX_1/OUT
+      : ro1/slice2/MUX_1/OUT_inferred/OUT
+      : ro1/slice2/MUX_1/OUT_inferred/B
+      : ro1/slice2/MUX_1/B
+      : ro1/slice2/B0_inferred/B0
+      : ro1/slice2/B0_inferred/A
+      : ro1/slice2/A
+      : ro1/slice1o_inferred__0/out
+      : ro1/slice1o_inferred__0/in0
+      : ro1/slice1o_inferred/out
+      : ro1/slice1o_inferred/in0
+      : ro1/slice1/out
+      : ro1/slice1/sliceOUT_inferred__0/out
+      : ro1/slice1/sliceOUT_inferred__0/in0
+      : ro1/slice1/sliceOUT_inferred/out
+      : ro1/slice1/sliceOUT_inferred/in0
+      : ro1/slice1/MUX_2/OUT
+      : ro1/slice1/MUX_2/OUT_inferred/OUT
+      : ro1/slice1/MUX_2/OUT_inferred/B
+      : ro1/slice1/MUX_2/B
+      : ro1/slice1/MUX_1_out_inferred__0/out
+      : ro1/slice1/MUX_1_out_inferred__0/in0
+      : ro1/slice1/MUX_1_out_inferred/out
+      : ro1/slice1/MUX_1_out_inferred/in0
+      : ro1/slice1/MUX_1/OUT
+      : ro1/slice1/MUX_1/OUT_inferred/OUT
+      : ro1/slice1/MUX_1/OUT_inferred/B
+      : ro1/slice1/MUX_1/B
+      : ro1/slice1/B0_inferred/B0
+      : ro1/slice1/B0_inferred/A
+      : ro1/slice1/A
+      : ro1/slice0o_inferred__0/out
+      : ro1/slice0o_inferred__0/in0
+      : ro1/slice0o_inferred/out
+      : ro1/slice0o_inferred/in0
+      : ro1/slice0/out
+      : ro1/slice0/sliceOUT_inferred__0/out
+      : ro1/slice0/sliceOUT_inferred__0/in0
+      : ro1/slice0/sliceOUT_inferred/out
+      : ro1/slice0/sliceOUT_inferred/in0
+      : ro1/slice0/MUX_4/OUT
+      : ro1/slice0/MUX_4/OUT_inferred/OUT
+      : ro1/slice0/MUX_4/OUT_inferred/B
+      : ro1/slice0/MUX_4/B
+      : ro1/slice0/MUX_3_out_inferred__0/out
+      : ro1/slice0/MUX_3_out_inferred__0/in0
+      : ro1/slice0/MUX_3_out_inferred/out
+      : ro1/slice0/MUX_3_out_inferred/in0
+      : ro1/slice0/MUX_3/OUT
+      : ro1/slice0/MUX_3/OUT_inferred/OUT
+      : ro1/slice0/MUX_3/OUT_inferred/B
+      : ro1/slice0/MUX_3/B
+      : ro1/slice0/MUX_2_out_inferred__0/out
+      : ro1/slice0/MUX_2_out_inferred__0/in0
+      : ro1/slice0/MUX_2_out_inferred/out
+      : ro1/slice0/MUX_2_out_inferred/in0
+      : ro1/slice0/MUX_2/OUT
+      : ro1/slice0/MUX_2/OUT_inferred/OUT
+      : ro1/slice0/MUX_2/OUT_inferred/B
+      : ro1/slice0/MUX_2/B
+      : ro1/slice0/B0_inferred/B0
+      : ro1/slice0/B0_inferred/A
+      : ro1/slice0/A
+      : ro1/slice2o_inferred__0/out
+      : ro1/slice2o_inferred__0/in0
+      : ro1/slice2o_inferred/out
+      : ro1/slice2o_inferred/in0
+      : ro1/slice2/out
+      : ro1/slice2/sliceOUT_inferred__0/out
+      : ro1/slice2/sliceOUT_inferred__0/in0
+      : ro1/slice2/sliceOUT_inferred/out
+      : ro1/slice2/sliceOUT_inferred/in0
+      : ro1/slice2/MUX_2/OUT
+      : ro1/slice2/MUX_2/OUT_inferred/OUT
+      : ro6/slice2/MUX_2/OUT_inferred/B
+      : ro6/slice2/MUX_2/B
+      : ro6/slice2/MUX_1_out_inferred__0/out
+      : ro6/slice2/MUX_1_out_inferred__0/in0
+      : ro6/slice2/MUX_1_out_inferred/out
+      : ro6/slice2/MUX_1_out_inferred/in0
+      : ro6/slice2/MUX_1/OUT
+      : ro6/slice2/MUX_1/OUT_inferred/OUT
+      : ro6/slice2/MUX_1/OUT_inferred/B
+      : ro6/slice2/MUX_1/B
+      : ro6/slice2/B0_inferred/B0
+      : ro6/slice2/B0_inferred/A
+      : ro6/slice2/A
+      : ro6/slice1o_inferred__0/out
+      : ro6/slice1o_inferred__0/in0
+      : ro6/slice1o_inferred/out
+      : ro6/slice1o_inferred/in0
+      : ro6/slice1/out
+      : ro6/slice1/sliceOUT_inferred__0/out
+      : ro6/slice1/sliceOUT_inferred__0/in0
+      : ro6/slice1/sliceOUT_inferred/out
+      : ro6/slice1/sliceOUT_inferred/in0
+      : ro6/slice1/MUX_2/OUT
+      : ro6/slice1/MUX_2/OUT_inferred/OUT
+      : ro6/slice1/MUX_2/OUT_inferred/B
+      : ro6/slice1/MUX_2/B
+      : ro6/slice1/MUX_1_out_inferred__0/out
+      : ro6/slice1/MUX_1_out_inferred__0/in0
+      : ro6/slice1/MUX_1_out_inferred/out
+      : ro6/slice1/MUX_1_out_inferred/in0
+      : ro6/slice1/MUX_1/OUT
+      : ro6/slice1/MUX_1/OUT_inferred/OUT
+      : ro6/slice1/MUX_1/OUT_inferred/B
+      : ro6/slice1/MUX_1/B
+      : ro6/slice1/B0_inferred/B0
+      : ro6/slice1/B0_inferred/A
+      : ro6/slice1/A
+      : ro6/slice0o_inferred__0/out
+      : ro6/slice0o_inferred__0/in0
+      : ro6/slice0o_inferred/out
+      : ro6/slice0o_inferred/in0
+      : ro6/slice0/out
+      : ro6/slice0/sliceOUT_inferred__0/out
+      : ro6/slice0/sliceOUT_inferred__0/in0
+      : ro6/slice0/sliceOUT_inferred/out
+      : ro6/slice0/sliceOUT_inferred/in0
+      : ro6/slice0/MUX_4/OUT
+      : ro6/slice0/MUX_4/OUT_inferred/OUT
+      : ro6/slice0/MUX_4/OUT_inferred/B
+      : ro6/slice0/MUX_4/B
+      : ro6/slice0/MUX_3_out_inferred__0/out
+      : ro6/slice0/MUX_3_out_inferred__0/in0
+      : ro6/slice0/MUX_3_out_inferred/out
+      : ro6/slice0/MUX_3_out_inferred/in0
+      : ro6/slice0/MUX_3/OUT
+      : ro6/slice0/MUX_3/OUT_inferred/OUT
+      : ro6/slice0/MUX_3/OUT_inferred/B
+      : ro6/slice0/MUX_3/B
+      : ro6/slice0/MUX_2_out_inferred__0/out
+      : ro6/slice0/MUX_2_out_inferred__0/in0
+      : ro6/slice0/MUX_2_out_inferred/out
+      : ro6/slice0/MUX_2_out_inferred/in0
+      : ro6/slice0/MUX_2/OUT
+      : ro6/slice0/MUX_2/OUT_inferred/OUT
+      : ro6/slice0/MUX_2/OUT_inferred/B
+      : ro6/slice0/MUX_2/B
+      : ro6/slice0/B0_inferred/B0
+      : ro6/slice0/B0_inferred/A
+      : ro6/slice0/A
+      : ro6/slice2o_inferred__0/out
+      : ro6/slice2o_inferred__0/in0
+      : ro6/slice2o_inferred/out
+      : ro6/slice2o_inferred/in0
+      : ro6/slice2/out
+      : ro6/slice2/sliceOUT_inferred__0/out
+      : ro6/slice2/sliceOUT_inferred__0/in0
+      : ro6/slice2/sliceOUT_inferred/out
+      : ro6/slice2/sliceOUT_inferred/in0
+      : ro6/slice2/MUX_2/OUT
+      : ro6/slice2/MUX_2/OUT_inferred/OUT
+      : ro2/slice2/MUX_2/OUT_inferred/B
+      : ro2/slice2/MUX_2/B
+      : ro2/slice2/MUX_1_out_inferred__0/out
+      : ro2/slice2/MUX_1_out_inferred__0/in0
+      : ro2/slice2/MUX_1_out_inferred/out
+      : ro2/slice2/MUX_1_out_inferred/in0
+      : ro2/slice2/MUX_1/OUT
+      : ro2/slice2/MUX_1/OUT_inferred/OUT
+      : ro2/slice2/MUX_1/OUT_inferred/B
+      : ro2/slice2/MUX_1/B
+      : ro2/slice2/B0_inferred/B0
+      : ro2/slice2/B0_inferred/A
+      : ro2/slice2/A
+      : ro2/slice1o_inferred__0/out
+      : ro2/slice1o_inferred__0/in0
+      : ro2/slice1o_inferred/out
+      : ro2/slice1o_inferred/in0
+      : ro2/slice1/out
+      : ro2/slice1/sliceOUT_inferred__0/out
+      : ro2/slice1/sliceOUT_inferred__0/in0
+      : ro2/slice1/sliceOUT_inferred/out
+      : ro2/slice1/sliceOUT_inferred/in0
+      : ro2/slice1/MUX_2/OUT
+      : ro2/slice1/MUX_2/OUT_inferred/OUT
+      : ro2/slice1/MUX_2/OUT_inferred/B
+      : ro2/slice1/MUX_2/B
+      : ro2/slice1/MUX_1_out_inferred__0/out
+      : ro2/slice1/MUX_1_out_inferred__0/in0
+      : ro2/slice1/MUX_1_out_inferred/out
+      : ro2/slice1/MUX_1_out_inferred/in0
+      : ro2/slice1/MUX_1/OUT
+      : ro2/slice1/MUX_1/OUT_inferred/OUT
+      : ro2/slice1/MUX_1/OUT_inferred/B
+      : ro2/slice1/MUX_1/B
+      : ro2/slice1/B0_inferred/B0
+      : ro2/slice1/B0_inferred/A
+      : ro2/slice1/A
+      : ro2/slice0o_inferred__0/out
+      : ro2/slice0o_inferred__0/in0
+      : ro2/slice0o_inferred/out
+      : ro2/slice0o_inferred/in0
+      : ro2/slice0/out
+      : ro2/slice0/sliceOUT_inferred__0/out
+      : ro2/slice0/sliceOUT_inferred__0/in0
+      : ro2/slice0/sliceOUT_inferred/out
+      : ro2/slice0/sliceOUT_inferred/in0
+      : ro2/slice0/MUX_4/OUT
+      : ro2/slice0/MUX_4/OUT_inferred/OUT
+      : ro2/slice0/MUX_4/OUT_inferred/B
+      : ro2/slice0/MUX_4/B
+      : ro2/slice0/MUX_3_out_inferred__0/out
+      : ro2/slice0/MUX_3_out_inferred__0/in0
+      : ro2/slice0/MUX_3_out_inferred/out
+      : ro2/slice0/MUX_3_out_inferred/in0
+      : ro2/slice0/MUX_3/OUT
+      : ro2/slice0/MUX_3/OUT_inferred/OUT
+      : ro2/slice0/MUX_3/OUT_inferred/B
+      : ro2/slice0/MUX_3/B
+      : ro2/slice0/MUX_2_out_inferred__0/out
+      : ro2/slice0/MUX_2_out_inferred__0/in0
+      : ro2/slice0/MUX_2_out_inferred/out
+      : ro2/slice0/MUX_2_out_inferred/in0
+      : ro2/slice0/MUX_2/OUT
+      : ro2/slice0/MUX_2/OUT_inferred/OUT
+      : ro2/slice0/MUX_2/OUT_inferred/B
+      : ro2/slice0/MUX_2/B
+      : ro2/slice0/B0_inferred/B0
+      : ro2/slice0/B0_inferred/A
+      : ro2/slice0/A
+      : ro2/slice2o_inferred__0/out
+      : ro2/slice2o_inferred__0/in0
+      : ro2/slice2o_inferred/out
+      : ro2/slice2o_inferred/in0
+      : ro2/slice2/out
+      : ro2/slice2/sliceOUT_inferred__0/out
+      : ro2/slice2/sliceOUT_inferred__0/in0
+      : ro2/slice2/sliceOUT_inferred/out
+      : ro2/slice2/sliceOUT_inferred/in0
+      : ro2/slice2/MUX_2/OUT
+      : ro2/slice2/MUX_2/OUT_inferred/OUT
 WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through ro1/slice0/B0_inferred/i_0/O'
 WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through ro2/slice0/B0_inferred/i_0/O'
 WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through ro3/slice0/B0_inferred/i_0/O'
@@ -918,9 +887,9 @@ WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path 
 WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through ro6/slice0/B0_inferred/i_0/O'
 WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through ro7/slice0/B0_inferred/i_0/O'
 WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through ro8/slice0/B0_inferred/i_0/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through ro0/slice2/MUX_2/OUT_inferred/i_0/Z'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through ro0/slice2/MUX_0/OUT_inferred/i_0/Z'
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:43 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:23 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -1026,7 +995,7 @@ Found timing loop:
      1: ro0/slice0/i_1/O (LUT1)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/sources_1/new/slicex0y1.sv:23]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:44 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1070,38 +1039,39 @@ WARNING: [Synth 8-3295] tying undriven pin MUX_2_out_inferred:in0 to constant 0
 WARNING: [Synth 8-3295] tying undriven pin MUX_4_out_inferred:in0 to constant 0
 WARNING: [Synth 8-3295] tying undriven pin MUX_2_out_inferred:in0 to constant 0
 WARNING: [Synth 8-3295] tying undriven pin MUX_2_out_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin selected_ro_out_prev_inferred:in0 to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:51 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:51 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:51 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:51 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:51 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:51 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1120,40 +1090,40 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |    40|
 |3     |LUT1   |   108|
-|4     |LUT2   |    77|
-|5     |LUT3   |   105|
-|6     |LUT4   |   136|
-|7     |LUT5   |    12|
-|8     |LUT6   |   192|
-|9     |FDRE   |   274|
+|4     |LUT2   |    16|
+|5     |LUT3   |   199|
+|6     |LUT4   |   137|
+|7     |LUT5   |    16|
+|8     |LUT6   |   165|
+|9     |FDRE   |   277|
 |10    |LD     |    27|
-|11    |IBUF   |     7|
+|11    |IBUF   |     8|
 |12    |OBUF   |    20|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:51 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1583.574 ; gain = 663.398
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 2 critical warnings and 38 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:48 . Memory (MB): peak = 1582.664 ; gain = 562.703
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:52 . Memory (MB): peak = 1582.664 ; gain = 664.582
+Synthesis finished with 0 errors, 2 critical warnings and 39 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1583.574 ; gain = 561.965
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1583.574 ; gain = 663.398
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1582.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1583.574 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 67 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1582.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1583.574 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 27 instances were transformed.
   LD => LDCE: 27 instances
 
-Synth Design complete | Checksum: 500f4e3e
+Synth Design complete | Checksum: 1aad19e2
 INFO: [Common 17-83] Releasing license: Synthesis
-42 Infos, 50 Warnings, 13 Critical Warnings and 0 Errors encountered.
+42 Infos, 41 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:01:12 . Memory (MB): peak = 1582.664 ; gain = 1066.168
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:32 . Memory (MB): peak = 1583.574 ; gain = 1065.758
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1582.664 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1583.574 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.runs/synth_1/RO_PUF.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RO_PUF_utilization_synth.rpt -pb RO_PUF_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov  3 13:40:38 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  3 14:32:59 2024...

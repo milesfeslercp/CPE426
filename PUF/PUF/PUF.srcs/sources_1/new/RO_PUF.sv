@@ -23,18 +23,19 @@
 module RO_PUF (
     input [5:0] challenge,     // 6-bit Challenge input to configure ROs
     input clk_50MHz,           // 50 MHz reference clock
+    input btnC,                // Button C input for reset
     
     output [3:0] DISP_EN,      // Display enable control for each digit
     output [6:0] SEGMENTS,      // 7-segment display segments (active low)
     output [7:0] LED,           // 8-bit LED output for testing
     output done_LED
 );
-    (* KEEP = "true" *)parameter MAX_STD_COUNT = 1000000;  // Example max count for std_counter
+    (* KEEP = "true" *)parameter MAX_STD_COUNT = 10000000;  // Example max count for std_counter
    (* KEEP = "true" *) parameter NUM_ROS = 9;              // Number of ROs
    (* KEEP = "true" *) reg valid = 1'b1;                  // Set display as valid
     (* KEEP = "true" *) reg [15:0] display_count;           // Expanded response to fit display COUNT input
     (* KEEP = "true" *)wire [8:0] ro_out;                  // Outputs from each RO instance (9 ROs)
-    (* KEEP = "true" *)reg selected_ro_out, selected_ro_out_prev;               // Selected RO output based on `ro_index`
+    (* KEEP = "true" *)wire selected_ro_out, selected_ro_out_prev;               // Selected RO output based on `ro_index`
     (* KEEP = "true" *)reg [8:0] ro_enable = 9'b000000001;
     (* KEEP = "true" *)reg [31:0] ro_counter = 0;              // Counter for RO oscillations
     (* KEEP = "true" *)reg [31:0] std_counter = 0;         // Standard counter for comparison
@@ -89,14 +90,41 @@ module RO_PUF (
     (* KEEP = "true" *)reg [3:0] delay = 0;
     // Multiplexer to select the RO output based on `ro_index`
     (* KEEP = "true" *)assign selected_ro_out = ro_out[ro_index];
+    (* KEEP = "true" *)reg btnC_prev = 0;
+    (* KEEP = "true" *)reg selected_ro_out_sync1, selected_ro_out_sync2;
+    (* DONT_TOUCH = "true" *)always @(posedge clk_50MHz) begin
+        (* KEEP = "true" *)selected_ro_out_sync1 <= selected_ro_out;
+        (* KEEP = "true" *)selected_ro_out_sync2 <= selected_ro_out_sync1;
+    end
+
+    // Edge detection
+    (* KEEP = "true" *)reg selected_ro_out_prev_sync;
+    (* KEEP = "true" *)wire ro_edge;
+
+    (* DONT_TOUCH = "true" *)always @(posedge clk_50MHz) begin
+        (* KEEP = "true" *)selected_ro_out_prev_sync <= selected_ro_out_sync2;
+    end
+
+    (* KEEP = "true" *)assign ro_edge = selected_ro_out_sync2 && !selected_ro_out_prev_sync;
+
 (* DONT_TOUCH = "true" *)
     // Main state machine for RO measurement and comparison
     always @(posedge clk_50MHz) begin
-        if (calculation_done == 0) begin
+        if (btnC && !btnC_prev) begin
+            // Reset all counters and flags for recalculation
+            std_counter <= 0;
+            ro_counter <= 0;
+            ro_index <= 0;
+            counting_active <= 1;
+            ro_enable <= 9'b000000001;
+            calculation_done <= 0;
+            valid <= 1;
+        end else if (calculation_done == 0) begin
             if (counting_active) begin
+                (* KEEP = "true" *)ro_enable <= 9'b000000000;
                 (* KEEP = "true" *)ro_enable[ro_index] <= 1'b1;  // Enable the next RO
                 if(valid == 0) begin
-                    valid = 1;
+                    valid <= 1;
                 end
                 // Increment standard counter and RO counter
                 // if (delay == 6) begin
@@ -108,12 +136,12 @@ module RO_PUF (
                 (* KEEP = "true" *) std_counter <= std_counter + 1;
                 (* DONT_TOUCH = "true" *)
                 // Detect rising edge of selected_ro_out and increment ro_counter accordingly
-                if (selected_ro_out && !selected_ro_out_prev) begin
+                if (ro_edge) begin
                     (* KEEP = "true" *)ro_counter <= ro_counter + 1;
                 end
 
             // Update previous state of selected_ro_out for edge detection
-                (* KEEP = "true" *)selected_ro_out_prev <= selected_ro_out;
+                // (* KEEP = "true" *)selected_ro_out_prev <= selected_ro_out;
 
                 // Stop counters when std_counter hits MAX_STD_COUNT
                 (* DONT_TOUCH = "true" *)if (std_counter >= MAX_STD_COUNT) begin
@@ -154,8 +182,7 @@ module RO_PUF (
                 (* KEEP = "true" *)counting_active <= 1;
                 //ro_enable <= 9'b000000000; // Enable first RO
             end
-        end
-        else begin
+        end else begin
             valid = 1;
             if (challenge != calculated_challenge) begin
                 // Calculation done, reset all counters and flags
@@ -167,5 +194,6 @@ module RO_PUF (
                 (* KEEP = "true" *)calculation_done <= 0;
             end
         end
+        btnC_prev <= btnC;
     end  
 endmodule
