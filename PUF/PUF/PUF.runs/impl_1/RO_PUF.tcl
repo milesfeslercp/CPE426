@@ -111,30 +111,12 @@ set rc [catch {
   set_param synth.incrementalSynthesisCache C:/Users/miles/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-32800-Miles-G14/incrSyn
   set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 16  }
-OPTRACE "create in-memory project" START { }
-  create_project -in_memory -part xc7a35tcpg236-1
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-OPTRACE "create in-memory project" END { }
-OPTRACE "set parameters" START { }
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.runs/impl_1/RO_PUF.dcp
   set_property webtalk.parent_dir C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.cache/wt [current_project]
   set_property parent.project_path C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.xpr [current_project]
   set_property ip_output_repo C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-OPTRACE "set parameters" END { }
-OPTRACE "add files" START { }
-  add_files -quiet C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.runs/synth_1/RO_PUF.dcp
-OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc
-OPTRACE "read constraints: implementation" END { }
-OPTRACE "read constraints: implementation_pre" START { }
-OPTRACE "read constraints: implementation_pre" END { }
-OPTRACE "add files" END { }
-OPTRACE "link_design" START { }
-  link_design -top RO_PUF -part xc7a35tcpg236-1 
-OPTRACE "link_design" END { }
-OPTRACE "gray box cells" START { }
-OPTRACE "gray box cells" END { }
 OPTRACE "init_design_reports" START { REPORT }
 OPTRACE "init_design_reports" END { }
 OPTRACE "init_design_write_hwdef" START { }

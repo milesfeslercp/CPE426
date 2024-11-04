@@ -1,8 +1,8 @@
 -------------------------------------
 | Tool Version : Vivado v.2024.1
-| Date         : Sun Nov  3 15:17:22 2024
+| Date         : Sun Nov  3 19:12:34 2024
 | Host         : Miles-G14
-| Design       : design_1
+| Design       : checkpoint_RO_PUF
 | Device       : xc7a35t-cpg236-1--
 -------------------------------------
 

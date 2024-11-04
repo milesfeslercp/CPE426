@@ -198,13 +198,21 @@
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/imports/verilog/Basys3_constraints.xdc">
         <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../OneDrive - Cal Poly/School/Fall 2022-Miles-G14/CPE133/Homework 1/Homework 1.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc"/>
           <Attr Name="ImportTime" Val="1666940992"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/constrs_1/new/constraint_1.xdc">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
+        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/constraint_1.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>

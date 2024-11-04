@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Sun Nov  3 15:17:18 2024
+| Date         : Sun Nov  3 19:12:30 2024
 | Host         : Miles-G14 running 64-bit major release  (build 9200)
 | Command      : report_drc -file RO_PUF_drc_opted.rpt -pb RO_PUF_drc_opted.pb -rpx RO_PUF_drc_opted.rpx
 | Design       : RO_PUF
@@ -20,16 +20,17 @@ Table of Contents
 1. REPORT SUMMARY
 -----------------
             Netlist: netlist
-          Floorplan: design_1
+          Floorplan: checkpoint_RO_PUF
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 10
+             Violations found: 26
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
 | LUTLP-2  | Warning  | Combinatorial Loop Allowed                          | 9          |
+| UTLZ-3   | Warning  | Resource utilization                                | 16         |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -144,6 +145,86 @@ ro8/slice1/MUX_0/OUT_INST_0, ro8/slice1/MUX_0_i_1, ro8/slice1/MUX_0_i_2,
 ro8/slice1/MUX_1/OUT_INST_0, ro8/slice1/MUX_2/OUT_INST_0,
 ro8/slice2/MUX_0/OUT_INST_0, ro8/slice2/MUX_0_i_1, ro8/slice2/MUX_0_i_2
  (the first 15 of 20 listed).
+Related violations: <none>
+
+UTLZ-3#1 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+CARRY4 over-utilized in Pblock pblock_sha128_inst_1 (This design requires more CARRY4 cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 104 of such cell types but only 88 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#2 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+CARRY4 over-utilized in Pblock pblock_sha128_inst_1 (This design requires more CARRY4 cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 104 of such cell types but only 88 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#3 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+F7 Muxes over-utilized in Pblock pblock_sha128_inst_1 (This design requires more F7 Muxes cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 832 of such cell types but only 176 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#4 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+F8 Muxes over-utilized in Pblock pblock_sha128_inst_1 (This design requires more F8 Muxes cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 256 of such cell types but only 88 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#5 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+FDCE and FDPE and FDRE and FDSE over-utilized in Pblock pblock_sha128_inst_1 (This design requires more FDCE and FDPE and FDRE and FDSE cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 2613 of such cell types but only 704 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#6 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+FDRE over-utilized in Pblock pblock_sha128_inst_1 (This design requires more FDRE cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 2048 of such cell types but only 704 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#7 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+LUT as Logic over-utilized in Pblock pblock_sha128_inst_1 (Pblock pblock_sha128_inst_1 has 2987 LUT as Logic(s) assigned to it, but only 352 LUT as Logic(s) are available in the area range defined. The placer will attempt to combine LUT as Logic(s) to make the assigned LUT as Logic(s) fit in the Pblock range. This may cause increased runtime and negative performance. It is highly encouraged that either the Pblock slice range is increased or fewer LUT as Logic(s) are assigned to the Pblock.)
+Related violations: <none>
+
+UTLZ-3#8 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+LUT2 and LUT3 and LUT4 and LUT5 and LUT6 over-utilized in Pblock pblock_sha128_inst_1 (This design requires more LUT2 and LUT3 and LUT4 and LUT5 and LUT6 cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 3185 of such cell types but only 704 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#9 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+LUT6 over-utilized in Pblock pblock_sha128_inst_1 (This design requires more LUT6 cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 1961 of such cell types but only 352 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#10 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+MUXF7 over-utilized in Pblock pblock_sha128_inst_1 (This design requires more MUXF7 cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 832 of such cell types but only 176 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#11 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+MUXF7 over-utilized in Pblock pblock_sha128_inst_1 (This design requires more MUXF7 cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 832 of such cell types but only 176 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#12 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+MUXF8 over-utilized in Pblock pblock_sha128_inst_1 (This design requires more MUXF8 cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 256 of such cell types but only 88 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#13 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+MUXF8 over-utilized in Pblock pblock_sha128_inst_1 (This design requires more MUXF8 cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 256 of such cell types but only 88 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#14 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+Register as Flip Flop over-utilized in Pblock pblock_sha128_inst_1 (This design requires more Register as Flip Flop cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 2613 of such cell types but only 704 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#15 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+Slice Registers over-utilized in Pblock pblock_sha128_inst_1 (This design requires more Slice Registers cells than are available in Pblock 'pblock_sha128_inst_1'. This design requires 2613 of such cell types but only 704 compatible sites are available in Pblock 'pblock_sha128_inst_1'. Please consider increasing the span of Pblock 'pblock_sha128_inst_1' or removing cells from it.)
+Related violations: <none>
+
+UTLZ-3#16 Warning
+Resource utilization  - PBlock:pblock_sha128_inst_1
+pblock_sha128_inst_1 over-utilized in Pblock pblock_sha128_inst_1 (Pblock pblock_sha128_inst_1 IS_SOFT property set. Ignoring capacity requirements for cells assigned to Pblock.)
 Related violations: <none>
 
 

@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param place.incremental.enableUpdateReuseAttrs 1
 set_param chipscope.maxJobs 4
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param synth.incrementalSynthesisCache C:/Users/miles/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-32800-Miles-G14/incrSyn
@@ -101,8 +102,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/imports/verilog/Basys3_constraints.xdc]
+read_xdc C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/new/constraint_1.xdc
+set_property used_in_implementation false [get_files C:/Users/miles/Documents/CPE426/PUF/PUF/PUF.srcs/constrs_1/new/constraint_1.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 

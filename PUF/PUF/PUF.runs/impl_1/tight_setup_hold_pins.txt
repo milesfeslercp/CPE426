@@ -1,13 +1,6 @@
 +====================+===================+=====================================+
 | Launch Setup Clock | Launch Hold Clock | Pin                                 |
 +====================+===================+=====================================+
-| sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/e_reg[26]/D |
-| sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/a_reg[6]/D  |
-| sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/a_reg[4]/D  |
-| sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/e_reg[9]/D  |
-| sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/a_reg[3]/D  |
+| sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/e_reg[22]/D |
 | sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/e_reg[7]/D  |
-| sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/e_reg[4]/D  |
-| sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/a_reg[2]/D  |
-| sys_clk_pin        | sys_clk_pin       | sha128_inst/sha256_comp/a_reg[1]/D  |
 +--------------------+-------------------+-------------------------------------+
